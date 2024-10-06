@@ -82,7 +82,7 @@ const Home = () => {
   return (
     <div className='Home'>
       <div className="Home2">
-        <h1>Die Deutsch Traum • ABIH heiraten</h1>
+        <h1>Du kannst HBA nicht heiraten, wenn du kein Deutscher bist</h1>
         <div className="Timer">
           {formatTime()}
         </div>
