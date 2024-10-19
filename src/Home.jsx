@@ -82,7 +82,7 @@ const Home = () => {
   return (
     <div className='Home'>
       <div className="Home2">
-        <h1></h1>
+        <h1>Surpass them all, rise to the top!</h1>
         <div className="Timer">
           {formatTime()}
         </div>
