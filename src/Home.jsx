@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import {useNavigate} from 'react-router-dom'
-
-
+import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
-  const targetDate = new Date('2024-11-05T22:00:00'); // Target date (YYYY-MM-DD)
+  const targetDate = new Date('2024-11-05T21:00:00'); // Target date (YYYY-MM-DD)
 
   const nav = useNavigate();
 
@@ -13,18 +11,16 @@ const Home = () => {
     const now = new Date();
     const difference = targetDate - now; // Difference in milliseconds
 
-    // If the target date has passed, return 0 for all units
-    if (difference <= 0) {
-      return { days: 0, hours: 0, minutes: 0, seconds: 0 };
-    }
-
     // Convert the difference into days, hours, minutes, and seconds
-    const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+    const totalSeconds = Math.abs(Math.floor(difference / 1000)); // Use absolute value for negative countdown
+    const days = Math.floor(totalSeconds / (60 * 60 * 24));
+    const hours = Math.floor((totalSeconds % (60 * 60 * 24)) / (60 * 60));
+    const minutes = Math.floor((totalSeconds % (60 * 60)) / 60);
+    const seconds = totalSeconds % 60;
 
-    return { days, hours, minutes, seconds };
+    return difference < 0
+      ? { days: -days, hours: -hours, minutes: -minutes, seconds: -seconds } // Negative values if the date has passed
+      : { days, hours, minutes, seconds }; // Regular countdown if still in the future
   };
 
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
@@ -44,36 +40,20 @@ const Home = () => {
     return (
       <div className='timer-display'>
         <button>
-          <span>
-            {days}
-          </span>
-          <span>
-            Tage
-          </span>
+          <span>{days}</span>
+          <span>Tage</span>
         </button>
         <button>
-          <span>
-            {hours.toString().padStart(2, '0')}
-          </span>
-          <span>
-            Stunden
-          </span>
+          <span>{hours.toString().padStart(2, '0')}</span>
+          <span>Stunden</span>
         </button>
         <button>
-          <span>
-            {minutes.toString().padStart(2, '0')}
-          </span>
-          <span>
-            Minuten
-          </span>
+          <span>{minutes.toString().padStart(2, '0')}</span>
+          <span>Minuten</span>
         </button>
         <button>
-          <span>
-            {seconds.toString().padStart(2, '0')}
-          </span>
-          <span>
-            Sekunden
-          </span>
+          <span>{seconds.toString().padStart(2, '0')}</span>
+          <span>Sekunden</span>
         </button>
       </div>
     );
@@ -90,10 +70,8 @@ const Home = () => {
           alert('Time is up!') // You can replace this with any action (popup, sound, etc.)
         )}
         <br />
-        <span className='sojqefd'  onClick={()=>{nav('/Dokument')}} >
-          <em>
-            Wesentliches Dokument
-          </em>
+        <span className='sojqefd' onClick={() => { nav('/Dokument') }}>
+          <em>Wesentliches Dokument</em>
         </span>
       </div>
     </div>
