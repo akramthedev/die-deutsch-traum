@@ -62,7 +62,7 @@ const Home = () => {
   return (
     <div className='Home'>
       <div className="Home2">
-        <h1>I will never surrender</h1>
+        <h1>Journey - Don't Stop Believin'</h1>
         <div className="Timer">
           {formatTime()}
         </div>
