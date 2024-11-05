@@ -8,20 +8,24 @@ const Home = () => {
   const nav = useNavigate();
 
   const calculateTimeLeft = () => {
-    const now = new Date();
-    const difference = targetDate - now; // Difference in milliseconds
+  const now = new Date();
+  const difference = targetDate - now; // Difference in milliseconds
 
-    // Convert the difference into days, hours, minutes, and seconds
-    const totalSeconds = Math.abs(Math.floor(difference / 1000)); // Use absolute value for negative countdown
-    const days = Math.floor(totalSeconds / (60 * 60 * 24));
-    const hours = Math.floor((totalSeconds % (60 * 60 * 24)) / (60 * 60));
-    const minutes = Math.floor((totalSeconds % (60 * 60)) / 60);
-    const seconds = totalSeconds % 60;
+  // If the difference is less than or equal to zero, set all units to 0
+  if (difference <= 0) {
+    return { days: 0, hours: 0, minutes: 0, seconds: 0 };
+  }
 
-    return difference < 0
-      ? { days: -days, hours: -hours, minutes: -minutes, seconds: -seconds } // Negative values if the date has passed
-      : { days, hours, minutes, seconds }; // Regular countdown if still in the future
-  };
+  // Convert the difference into days, hours, minutes, and seconds
+  const totalSeconds = Math.floor(difference / 1000);
+  const days = Math.floor(totalSeconds / (60 * 60 * 24));
+  const hours = Math.floor((totalSeconds % (60 * 60 * 24)) / (60 * 60));
+  const minutes = Math.floor((totalSeconds % (60 * 60)) / 60);
+  const seconds = totalSeconds % 60;
+
+  return { days, hours, minutes, seconds };
+};
+
 
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
   const [isTimeUp, setIsTimeUp] = useState(false); // New state to track if the timer has completed
@@ -75,16 +79,14 @@ const Home = () => {
   return (
     <div className='Home'>
       <div className="Home2">
-        <h1>Journey - Don't Stop Believin'</h1>
+        <h1>
+          {isTimeUp ? "Timer completed" : "Journey - Don't Stop Believin'"}    
+        </h1>
         <div className="Timer">
           {formatTime()}
         </div>
         
-        {isTimeUp && (
-          <div className="Home2"> {/* Display the message with the same styling */}
-            <p>Timer completed</p>
-          </div>
-        )}
+        
         
         <br />
         <span className='sojqefd' onClick={() => { nav('/Dokument') }}>
