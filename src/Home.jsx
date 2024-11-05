@@ -24,11 +24,24 @@ const Home = () => {
   };
 
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
+  const [isTimeUp, setIsTimeUp] = useState(false); // New state to track if the timer has completed
 
   // Countdown logic: update the time left every second
   useEffect(() => {
     const timer = setInterval(() => {
-      setTimeLeft(calculateTimeLeft());
+      const updatedTimeLeft = calculateTimeLeft();
+      setTimeLeft(updatedTimeLeft);
+
+      // Check if the countdown has completed
+      if (
+        updatedTimeLeft.days === 0 &&
+        updatedTimeLeft.hours === 0 &&
+        updatedTimeLeft.minutes === 0 &&
+        updatedTimeLeft.seconds === 0
+      ) {
+        setIsTimeUp(true); // Set the flag when the timer completes
+        clearInterval(timer); // Stop the timer when time is up
+      }
     }, 1000);
 
     return () => clearInterval(timer); // Cleanup interval on unmount
@@ -66,9 +79,13 @@ const Home = () => {
         <div className="Timer">
           {formatTime()}
         </div>
-        {timeLeft.days === 0 && timeLeft.hours === 0 && timeLeft.minutes === 0 && timeLeft.seconds === 0 && (
-          alert('Time is up!') // You can replace this with any action (popup, sound, etc.)
+        
+        {isTimeUp && (
+          <div className="Home2"> {/* Display the message with the same styling */}
+            <p>Timer completed</p>
+          </div>
         )}
+        
         <br />
         <span className='sojqefd' onClick={() => { nav('/Dokument') }}>
           <em>Wesentliches Dokument</em>
