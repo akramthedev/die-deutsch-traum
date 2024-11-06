@@ -19,6 +19,12 @@ const Dokument = () => {
     <div className='Dokument'>
       <h1>Wesentliches Dokument</h1>
       <br /><br />
+      <a>
+        Numéro enregistrement Botschaft : 22663930 
+      </a>
+       <a>
+        Numéro Passeport : NS1562494  
+      </a>
       <a href={LettreRecommendation} download="Lettre Recommendation Rachid.pdf">
         Lettre Recommendation - Rachid Dakir
       </a>
