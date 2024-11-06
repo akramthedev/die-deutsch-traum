@@ -3,7 +3,7 @@ import './App.css';
 import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
-  const targetDate = new Date('2024-11-06T06:19:00'); // Target date (YYYY-MM-DD)
+  const targetDate = new Date('2024-12-04T00:00:00'); 
 
   const nav = useNavigate();
 
@@ -80,7 +80,7 @@ const Home = () => {
     <div className='Home'>
       <div className="Home2">
         <h1>
-          {isTimeUp ? "Timer completed" : "Journey - Don't Stop Believin'"}    
+          {isTimeUp ? "Timer completed" : "Deutsch-Prüfungsergebnisse"}    
         </h1>
         <div className="Timer">
           {formatTime()}
