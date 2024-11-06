@@ -80,7 +80,7 @@ const Home = () => {
     <div className='Home'>
       <div className="Home2">
         <h1>
-          {isTimeUp ? "Timer completed" : "Deutsch-Prüfungsergebnisse"}    
+          {isTimeUp ? "Timer completed" : "Deutsch-Prüfungsergebnisse : service@telc.net"}    
         </h1>
         <div className="Timer">
           {formatTime()}
