@@ -67,6 +67,14 @@ const Home = () => {
           <span>{hours.toString().padStart(2, '0')}</span>
           <span>Hours</span>
         </button>
+        <button>
+          <span>{minutes.toString().padStart(2, '0')}</span>
+          <span>Minutes</span>
+        </button>
+        <button>
+          <span>{seconds.toString().padStart(2, '0')}</span>
+          <span>Seconds</span>
+        </button>
       </div>
     );
   };
