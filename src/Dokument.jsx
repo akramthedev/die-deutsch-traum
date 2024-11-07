@@ -21,7 +21,10 @@ const Dokument = () => {
       <br /><br />
       <a>
         Numéro enregistrement Botschaft : 22663930 
-      </a>
+      </a> 
+       <a>
+        Emailing the TELC : service@telc.net 
+      </a> 
        <a>
         Numéro Passeport : NS1562494  
       </a>
