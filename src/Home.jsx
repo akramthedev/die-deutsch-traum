@@ -3,7 +3,7 @@ import './App.css';
 import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
-  const targetDate = new Date('2024-12-06T00:00:00'); 
+  const targetDate = new Date('2025-01-25T00:00:00');
 
   const nav = useNavigate();
 
