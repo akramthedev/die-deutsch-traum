@@ -24,7 +24,7 @@
 .Home h1{
   font-size: 2.2rem;
   font-weight: 800;
-  color: red;
+  color: blueviolet;
   font-family: "Lora", serif;
 }
 .Timer{
@@ -93,7 +93,7 @@
 }
 
 .sojqefd{
-  color: red;
+  color: blueviolet;
   cursor: pointer;
 }
 .sojqefd:hover{
