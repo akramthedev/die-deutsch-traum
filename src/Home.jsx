@@ -11,21 +11,17 @@ const Home = () => {
     const difference = targetDate - now;
 
     if (difference <= 0) {
-      return { months: 0, days: 0, hours: 0, minutes: 0, seconds: 0 };
+      return { days: 0, hours: 0, minutes: 0, seconds: 0 };
     }
 
     const totalSeconds = Math.floor(difference / 1000);
     const totalDays = Math.floor(totalSeconds / (60 * 60 * 24));
     
-    // Calculate months by dividing days by approximate days per month (30.44)
-    const months = Math.floor(totalDays / 30.44);
-    const days = totalDays - months * 30.44;
-    
     const hours = Math.floor((totalSeconds % (60 * 60 * 24)) / (60 * 60));
     const minutes = Math.floor((totalSeconds % (60 * 60)) / 60);
     const seconds = totalSeconds % 60;
 
-    return { months, days: Math.floor(days), hours, minutes, seconds };
+    return { days: totalDays, hours, minutes, seconds };
   };
 
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
@@ -37,7 +33,6 @@ const Home = () => {
       setTimeLeft(updatedTimeLeft);
 
       if (
-        updatedTimeLeft.months === 0 &&
         updatedTimeLeft.days === 0 &&
         updatedTimeLeft.hours === 0 &&
         updatedTimeLeft.minutes === 0 &&
@@ -52,13 +47,9 @@ const Home = () => {
   }, []);
 
   const formatTime = () => {
-    const { months, days, hours, minutes, seconds } = timeLeft;
+    const { days, hours, minutes, seconds } = timeLeft;
     return (
       <div className='timer-display'>
-        <button>
-          <span>{months}</span>
-          <span>Months</span>
-        </button>
         <button>
           <span>{days}</span>
           <span>Days</span>
