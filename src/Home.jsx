@@ -3,7 +3,7 @@ import './App.css';
 import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
-  const targetDate = new Date('2025-02-22T00:00:00');
+  const targetDate = new Date('2024-11-18T00:00:00');
   const nav = useNavigate();
 
   const calculateTimeLeft = () => {
@@ -74,7 +74,7 @@ const Home = () => {
     <div className='Home'>
       <div className="Home2">
         <h1>
-          {isTimeUp ? "Timer completed" : "IELTS : 22/02/2025"}
+          {isTimeUp ? "Timer completed" : "Deadline : WEB App"}
         </h1>
         <div className="Timer">
           {formatTime()}
