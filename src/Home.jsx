@@ -74,7 +74,7 @@ const Home = () => {
     <div className='Home'>
       <div className="Home2">
         <h1>
-          {isTimeUp ? "Timer completed" : "IELTS : 25/01/2025"}
+          {isTimeUp ? "Timer completed" : "IELTS : 22/02/2025"}
         </h1>
         <div className="Timer">
           {formatTime()}
