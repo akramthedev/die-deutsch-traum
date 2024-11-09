@@ -83,6 +83,10 @@ const Home = () => {
         <span className='sojqefd' onClick={() => { nav('/Dokument') }}>
           <em>Important Documents</em>
         </span>
+        <br />
+        <span className='sojqefd' onClick={() => { nav('/todo') }}>
+          <em>Todo</em>
+        </span>
       </div>
     </div>
   );
