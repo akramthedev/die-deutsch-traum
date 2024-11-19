@@ -88,8 +88,9 @@
   overflow: hidden;
   display: flex;
   align-items: center;
-  justify-content: center;
-  flex-direction: column;
+  padding: 1rem 3rem,
+  justify-content: space-between;
+  flex-direction: row;
 }
 
 .sojqefd{
