@@ -142,6 +142,8 @@
   
   .task-actions button {
     margin-left: 10px;
+        outline : none;border-radius : 0.4rem;
+    border : none;
   }
   
   .task-input input {
@@ -157,6 +159,9 @@
   
   .task-input button {
     padding: 5px 10px;
+        outline : none;
+    border-radius : 0.4rem;
+    border : none;
   }
   
 
@@ -173,11 +178,15 @@
     background-color:  rgb(57, 199, 29) !important;
     color: white !important;
     cursor: pointer ;
+    outline : none;border-radius : 0.4rem;
+    border : none;
     transition: .2s all ease-in-out;
   }
 
   .task-input button{
     height: 43.5px !important;
+        outline : none;border-radius : 0.4rem;
+    border : none;
   }
 
   .caseOn982 button:hover{
@@ -191,6 +200,8 @@
 
 .task-actions button{
     background-color: rgb(230, 0, 0) !important;
+      outline : none;
+    border : none;border-radius : 0.4rem;
 }
 .task-actions  button:hover{
     background-color: rgb(176, 0, 0) !important;
