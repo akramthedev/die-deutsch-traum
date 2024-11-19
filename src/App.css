@@ -111,3 +111,11 @@
   justify-content: center;
   flex-direction: column;
 }
+
+
+
+.simo{
+  display: flex;
+  flex-direction: column;
+  justify-content : center;
+}
