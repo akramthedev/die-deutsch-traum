@@ -63,18 +63,24 @@ const Home = () => {
   return (
     <div className='Home'>
       <div className="Home2">
-        <h1>Countdown to IELTS Exam (22/02/2025)</h1>
-        <div className="Timer">
-          {formatTime(examTimeLeft)}
+
+        <div className="simo">
+          <h1>IELTS Exam</h1>
+          <div className="Timer">
+            {formatTime(examTimeLeft)}
+          </div>
         </div>
-        <h1>Countdown to University Start (01/04/2025)</h1>
-        <div className="Timer">
-          {formatTime(uniTimeLeft)}
+        <div className="simo">
+           <h1>University Application</h1>
+           <div className="Timer">
+             {formatTime(uniTimeLeft)}
+           </div>
         </div>
-        <span className='sojqefd' onClick={() => { nav('/Dokument') }}>
-          <em>Docs</em>
-        </span>
-       
+        <div className="simo">
+          <span className='sojqefd' onClick={() => { nav('/Dokument') }}>
+           <em>Docs</em>
+          </span>
+        </div>      
       </div>
     </div>
   );
