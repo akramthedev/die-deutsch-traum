@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 const Home = () => {
   const examDate = new Date('2025-02-22T00:00:00');
   const uniStartDate = new Date('2025-04-01T00:00:00');
+  const goToDeu = new Date('2025-08-15T00:00:00');
   const nav = useNavigate();
 
   const calculateTimeLeft = (targetDate) => {
@@ -26,11 +27,13 @@ const Home = () => {
 
   const [examTimeLeft, setExamTimeLeft] = useState(calculateTimeLeft(examDate));
   const [uniTimeLeft, setUniTimeLeft] = useState(calculateTimeLeft(uniStartDate));
+  const [gotodeTimeLeft, setgotodeTimeLeft] = useState(calculateTimeLeft(goToDeu));
 
   useEffect(() => {
     const timer = setInterval(() => {
       setExamTimeLeft(calculateTimeLeft(examDate));
       setUniTimeLeft(calculateTimeLeft(uniStartDate));
+      setgotodeTimeLeft(calculateTimeLeft(goToDeu));
     }, 1000);
 
     return () => clearInterval(timer);
@@ -74,6 +77,12 @@ const Home = () => {
            <h1>University Application</h1>
            <div className="Timer">
              {formatTime(uniTimeLeft)}
+           </div>
+        </div>
+         <div className="simo">
+           <h1>Deutsch Traum</h1>
+           <div className="Timer">
+             {formatTime(gotodeTimeLeft)}
            </div>
         </div>
         <div className="simo">
