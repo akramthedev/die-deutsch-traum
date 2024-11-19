@@ -71,14 +71,10 @@ const Home = () => {
         <div className="Timer">
           {formatTime(uniTimeLeft)}
         </div>
-        <br />
         <span className='sojqefd' onClick={() => { nav('/Dokument') }}>
-          <em>Important Documents</em>
+          <em>Docs</em>
         </span>
-        <br />
-        <span className='sojqefd' onClick={() => { nav('/todo') }}>
-          <em>Todo</em>
-        </span>
+       
       </div>
     </div>
   );
