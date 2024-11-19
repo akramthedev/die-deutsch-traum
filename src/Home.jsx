@@ -13,16 +13,18 @@ const Home = () => {
     const difference = targetDate - now;
 
     if (difference <= 0) {
-      return { days: 0, hours: 0, minutes: 0, seconds: 0 };
+      return { months: 0, days: 0, hours: 0 };
     }
 
     const totalSeconds = Math.floor(difference / 1000);
     const totalDays = Math.floor(totalSeconds / (60 * 60 * 24));
     const hours = Math.floor((totalSeconds % (60 * 60 * 24)) / (60 * 60));
-    const minutes = Math.floor((totalSeconds % (60 * 60)) / 60);
-    const seconds = totalSeconds % 60;
 
-    return { days: totalDays, hours, minutes, seconds };
+    // Approximate months (30.44 days average per month)
+    const months = Math.floor(totalDays / 30.44);
+    const days = totalDays % 30;
+
+    return { months, days, hours };
   };
 
   const [examTimeLeft, setExamTimeLeft] = useState(calculateTimeLeft(examDate));
@@ -40,9 +42,13 @@ const Home = () => {
   }, []);
 
   const formatTime = (timeLeft) => {
-    const { days, hours, minutes, seconds } = timeLeft;
+    const { months, days, hours } = timeLeft;
     return (
       <div className='timer-display'>
+        <button>
+          <span>{months}</span>
+          <span>Months</span>
+        </button>
         <button>
           <span>{days}</span>
           <span>Days</span>
@@ -51,41 +57,33 @@ const Home = () => {
           <span>{hours.toString().padStart(2, '0')}</span>
           <span>Hours</span>
         </button>
-        <button>
-          <span>{minutes.toString().padStart(2, '0')}</span>
-          <span>Minutes</span>
-        </button>
-        <button>
-          <span>{seconds.toString().padStart(2, '0')}</span>
-          <span>Seconds</span>
-        </button>
       </div>
     );
   };
 
   return (
     <div className='Home'>
-       <span className='sojqefd' onClick={() => { nav('/Dokument') }}>
-          <em>Docs</em>
-        </span>
+      <span className='sojqefd' onClick={() => { nav('/Dokument') }}>
+        <em>Docs</em>
+      </span>
       <div className="Home2">
         <div className="simo">
-          <h1>IELTS Exam</h1>
+          <h1>IELTS</h1>
           <div className="Timer">
             {formatTime(examTimeLeft)}
           </div>
         </div>
         <div className="simo">
-           <h1>University Application</h1>
-           <div className="Timer">
-             {formatTime(uniTimeLeft)}
-           </div>
+          <h1>Applications</h1>
+          <div className="Timer">
+            {formatTime(uniTimeLeft)}
+          </div>
         </div>
-         <div className="simo">
-           <h1>Deutsch Traum</h1>
-           <div className="Timer">
-             {formatTime(gotodeTimeLeft)}
-           </div>
+        <div className="simo">
+          <h1>Escape this Hell</h1>
+          <div className="Timer">
+            {formatTime(gotodeTimeLeft)}
+          </div>
         </div>
       </div>
     </div>
