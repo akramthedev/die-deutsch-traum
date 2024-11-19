@@ -65,8 +65,10 @@ const Home = () => {
 
   return (
     <div className='Home'>
+       <span className='sojqefd' onClick={() => { nav('/Dokument') }}>
+          <em>Docs</em>
+        </span>
       <div className="Home2">
-
         <div className="simo">
           <h1>IELTS Exam</h1>
           <div className="Timer">
@@ -85,11 +87,6 @@ const Home = () => {
              {formatTime(gotodeTimeLeft)}
            </div>
         </div>
-        <div className="simo">
-          <span className='sojqefd' onClick={() => { nav('/Dokument') }}>
-           <em>Docs</em>
-          </span>
-        </div>      
       </div>
     </div>
   );
