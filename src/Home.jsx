@@ -133,7 +133,7 @@ const Home = () => {
       logo: 'https://www.inlingua-augsburg.de/fileadmin/_processed_/d/a/csm_Logo-telc-border_0f42165ff9.png',
     },
     {
-      isDone : false, 
+      isDone : true, 
       date: '06-12-2024',
       content: 'Ergebnis : 280/300',
       logo: 'https://www.inlingua-augsburg.de/fileadmin/_processed_/d/a/csm_Logo-telc-border_0f42165ff9.png',
