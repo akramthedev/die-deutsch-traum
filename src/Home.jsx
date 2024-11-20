@@ -123,19 +123,19 @@ const Home = () => {
     {
       isDone : true, 
       date: '06-07-2024',
-      content: 'Vorbereitung',
+      content: 'TELC Vorbereitung',
       logo: 'https://www.inlingua-augsburg.de/fileadmin/_processed_/d/a/csm_Logo-telc-border_0f42165ff9.png',
     },
     {
       isDone : true, 
       date: '06-11-2024',
-      content: 'Prüfung',
+      content: 'TELC Prüfung',
       logo: 'https://www.inlingua-augsburg.de/fileadmin/_processed_/d/a/csm_Logo-telc-border_0f42165ff9.png',
     },
     {
       isDone : true, 
       date: '06-12-2024',
-      content: 'Ergebnis : 280/300',
+      content: 'TELC Ergebnis : 280/300',
       logo: 'https://www.inlingua-augsburg.de/fileadmin/_processed_/d/a/csm_Logo-telc-border_0f42165ff9.png',
     },
     {
