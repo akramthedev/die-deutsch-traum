@@ -47,6 +47,50 @@ const Home = () => {
     };
   });
 
+  // Fullscreen handling functions
+  const enterFullScreen = () => {
+    const docEl = document.documentElement;
+    if (docEl.requestFullscreen) {
+      docEl.requestFullscreen();
+    } else if (docEl.mozRequestFullScreen) { // Firefox
+      docEl.mozRequestFullScreen();
+    } else if (docEl.webkitRequestFullscreen) { // Chrome, Safari and Opera
+      docEl.webkitRequestFullscreen();
+    } else if (docEl.msRequestFullscreen) { // IE/Edge
+      docEl.msRequestFullscreen();
+    }
+  };
+
+  const exitFullScreen = () => {
+    if (document.exitFullscreen) {
+      document.exitFullscreen();
+    } else if (document.mozCancelFullScreen) { // Firefox
+      document.mozCancelFullScreen();
+    } else if (document.webkitExitFullscreen) { // Chrome, Safari and Opera
+      document.webkitExitFullscreen();
+    } else if (document.msExitFullscreen) { // IE/Edge
+      document.msExitFullscreen();
+    }
+  };
+
+  // Set up event listeners for Enter and Esc keys
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      if (event.key === 'Enter') {
+        enterFullScreen();
+      } else if (event.key === 'Escape') {
+        exitFullScreen();
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+
+    // Cleanup the event listener on unmount
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, []);
+
   return (
     <div className="container">
       <h1>IELTS Band 7.0</h1>   
