@@ -1,89 +1,76 @@
- import React, { useState, useEffect } from 'react';
+ import {useNavigate} from 'react-router-dom'
+import React, { useState, useEffect } from 'react';
 import './App.css';
-import {useNavigate} from 'react-router-dom'
+
 const Home = () => {
-  const targetDate = new Date('2025-01-25T00:00:00'); // Target date (YYYY-MM-DD)
-  const nav = useNavigate();
-  const calculateTimeLeft = () => {
+  // Define the total number of days (60 days)
+  const totalDays = 60;
+
+  // Set the start date as today
+  const FirstDate = new Date();
+  
+  // Set the end date as 22nd January 2025
+  const endDate = new Date("2025-01-22");
+
+  // State to track the number of days passed from FirstDate
+  const [daysPassed, setDaysPassed] = useState(0);
+
+  // Function to calculate the difference in days
+  const calculateDaysPassed = () => {
     const now = new Date();
-    const difference = targetDate - now; // Difference in milliseconds
-    // If the target date has passed, return 0 for all units
-    if (difference <= 0) {
-      return { days: 0, hours: 0, minutes: 0, seconds: 0 };
-    }
-    // Convert the difference into days, hours, minutes, and seconds
-    const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((difference % (1000 * 60)) / 1000);
-    return { days, hours, minutes, seconds };
+    const differenceInTime = now - FirstDate; // Difference in milliseconds
+    const differenceInDays = Math.floor(differenceInTime / (1000 * 3600 * 24)); // Convert ms to days
+    return Math.min(differenceInDays, totalDays); // Ensure we don't exceed 60 days
   };
-  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
-  // Countdown logic: update the time left every second
+
+  // Use useEffect to calculate days passed and update every day
   useEffect(() => {
-    const timer = setInterval(() => {
-      setTimeLeft(calculateTimeLeft());
-    }, 1000);
-    return () => clearInterval(timer); // Cleanup interval on unmount
-  }, []);
-  // Format the time left into a readable format
-  const formatTime = () => {
-    const { days, hours, minutes, seconds } = timeLeft;
-    return (
-      <div className='timer-display'>
-        <button>
-          <span>
-            {days}
-          </span>
-          <span>
-            Days
-          </span>
-        </button>
-        <button>
-          <span>
-            {hours.toString().padStart(2, '0')}
-          </span>
-          <span>
-            Hours
-          </span>
-        </button>
-        <button>
-          <span>
-            {minutes.toString().padStart(2, '0')}
-          </span>
-          <span>
-            Minutes
-          </span>
-        </button>
-        <button>
-          <span>
-            {seconds.toString().padStart(2, '0')}
-          </span>
-          <span>
-            Seconds
-          </span>
-        </button>
-      </div>
-    );
-  };
+    // Initialize the number of days passed immediately
+    setDaysPassed(calculateDaysPassed());
+
+    const interval = setInterval(() => {
+      // Recalculate days passed each day
+      setDaysPassed(calculateDaysPassed());
+    }, 86400000); // Check every 24 hours (1 day in ms)
+
+    return () => clearInterval(interval); // Cleanup on component unmount
+  }, [FirstDate]); // The dependency array contains "FirstDate", so it recalculates when necessary
+
+  // Generate 60 squares (true if the day has passed, false otherwise)
+  const squares = Array.from({ length: totalDays }, (_, index) => {
+    const currentDate = new Date(FirstDate);
+    currentDate.setDate(FirstDate.getDate() + index); // Get the date for each square
+    return {
+      day: currentDate.getDate(), // Get the day of the month
+      hasPassed: index < daysPassed, // Whether this day has passed
+    };
+  });
+
   return (
-    <div className='Home'>
-      <div className="Home2">
-        <h1>IELTS&nbsp;&nbsp;Band : 7+</h1>
-        <div className="Timer">
-          {formatTime()}
-        </div>
-        {timeLeft.days === 0 && timeLeft.hours === 0 && timeLeft.minutes === 0 && timeLeft.seconds === 0 && (
-          alert('Time is up!') // You can replace this with any action (popup, sound, etc.)
-        )}
-        <br />
-        <span className='sojqefd'  onClick={()=>{nav('/Dokument')}} >
-          <em>
-            Wesentliches Dokument
-          </em>
-        </span>
+    <div className="container">
+      <h1>IELTS Band 7.0</h1>   
+      <br />
+      <br />
+       <div className="grid">
+        {squares.map(({ day, hasPassed }, index) => (
+          <div
+            key={index}
+            className={`square ${hasPassed ? 'passed' : ''}`}
+          >
+            {day} {/* Display the day of the month inside each square */}
+          </div>
+        ))}
       </div>
+      <br />
+      <br />
+      <br />
+      <div  className='zrsfsrefzse' >Days Passed: {daysPassed}</div>
+      <br />
+      <div className='zrsfsrefzse'>End Date: {endDate.toDateString()}</div>
+      <br />
+      <div onClick={()=>{nav('/Dokument')}} className='zrsfsrefzse'>Important Documents</div>
     </div>
   );
 };
+
 export default Home;
