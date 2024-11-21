@@ -36,7 +36,7 @@ const Home = () => {
             {days}
           </span>
           <span>
-            Tage
+            Days
           </span>
         </button>
         <button>
@@ -44,7 +44,7 @@ const Home = () => {
             {hours.toString().padStart(2, '0')}
           </span>
           <span>
-            Stunden
+            Hours
           </span>
         </button>
         <button>
@@ -52,7 +52,7 @@ const Home = () => {
             {minutes.toString().padStart(2, '0')}
           </span>
           <span>
-            Minuten
+            Minutes
           </span>
         </button>
         <button>
@@ -60,7 +60,7 @@ const Home = () => {
             {seconds.toString().padStart(2, '0')}
           </span>
           <span>
-            Sekunden
+            Seconds
           </span>
         </button>
       </div>
