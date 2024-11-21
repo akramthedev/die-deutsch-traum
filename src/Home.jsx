@@ -1,4 +1,4 @@
- import {useNavigate} from 'react-router-dom'
+ import { useNavigate } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
 import './App.css';
 
@@ -28,10 +28,11 @@ const Home = () => {
     // Initialize the number of days passed immediately
     setDaysPassed(calculateDaysPassed());
 
+    // Check every 15 minutes (900,000 ms)
     const interval = setInterval(() => {
-      // Recalculate days passed each day
+      // Recalculate days passed each 15 minutes
       setDaysPassed(calculateDaysPassed());
-    }, 86400000); // Check every 24 hours (1 day in ms)
+    }, 900000); // 15 minutes in milliseconds
 
     return () => clearInterval(interval); // Cleanup on component unmount
   }, [FirstDate]); // The dependency array contains "FirstDate", so it recalculates when necessary
@@ -64,11 +65,11 @@ const Home = () => {
       <br />
       <br />
       <br />
-      <div  className='zrsfsrefzse' >Days Passed: {daysPassed}</div>
+      <div className='zrsfsrefzse'>Days Passed: {daysPassed}</div>
       <br />
       <div className='zrsfsrefzse'>End Date: {endDate.toDateString()}</div>
       <br />
-      <div onClick={()=>{nav('/Dokument')}} className='zrsfsrefzse'>Important Documents</div>
+      <div onClick={() => { nav('/Dokument') }} className='zrsfsrefzse'>Important Documents</div>
     </div>
   );
 };
