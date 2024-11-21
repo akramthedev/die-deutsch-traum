@@ -7,7 +7,7 @@ const Home = () => {
   const totalDays = 60;
   const nav = useNavigate();
   // Set the start date as today
-  const FirstDate = new Date();
+  const FirstDate = new Date("2024-11-20");
   
   // Set the end date as 22nd January 2025
   const endDate = new Date("2025-01-22");
