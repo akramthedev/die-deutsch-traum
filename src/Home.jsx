@@ -69,7 +69,7 @@ const Home = () => {
   return (
     <div className='Home'>
       <div className="Home2">
-        <h1>TOEFL&nbsp;&nbsp;Band : 100</h1>
+        <h1>IELTS&nbsp;&nbsp;Band : 7+</h1>
         <div className="Timer">
           {formatTime()}
         </div>
