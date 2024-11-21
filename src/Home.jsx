@@ -5,7 +5,7 @@ import './App.css';
 const Home = () => {
   // Define the total number of days (60 days)
   const totalDays = 60;
-
+  const nav = useNavigate();
   // Set the start date as today
   const FirstDate = new Date();
   
