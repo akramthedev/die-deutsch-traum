@@ -4,10 +4,10 @@ import './App.css';
 
 const Home = () => {
   // Define the total number of days (60 days)
-  const totalDays = 120;
+  const totalDays = 126;
   const nav = useNavigate();
   // Set the start date as today
-  const FirstDate = new Date("2024-11-21");
+  const FirstDate = new Date("2024-11-14");
   
   // Set the end date as 22nd January 2025
   const endDate = new Date("2025-03-22");
