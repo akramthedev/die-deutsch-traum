@@ -26,8 +26,8 @@
   
   .grid {
     display: grid;
-    grid-template-columns: repeat(12, 33px);
-    grid-template-rows: repeat(10, 33px);
+    grid-template-columns: repeat(14, 33px);
+    grid-template-rows: repeat(8, 33px);
     gap: 5px;
   }
   
