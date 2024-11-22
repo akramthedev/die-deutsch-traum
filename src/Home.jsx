@@ -93,7 +93,7 @@ const Home = () => {
 
   return (
     <div className="container">
-      <h1>IELTS Band 7.0</h1>   
+      <h1>TOEFL Band 100</h1>   
       <br />
       <br />
        <div className="grid">
@@ -109,9 +109,9 @@ const Home = () => {
       <br />
       <br />
       <br />
-      <div className='zrsfsrefzse'>The only way to get C1 within 4 months : Everyday 12 hours</div>
+      <div className='zrsfsrefzse'>The only way to get C1 within 3 months : Everyday 12 hours +</div>
       <br />
-     <div className='zrsfsrefzse'>Speaking 6h   |   Reading 2h  |  Listening 2h  |  Writting 2h</div>
+     <div className='zrsfsrefzse'>Speaking 3h   |   Reading 3h  |  Listening 3h  |  Writting 3h</div>
       <br />
       <div className='zrsfsrefzse'>End Date: {endDate.toDateString()}</div>
       <br />
