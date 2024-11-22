@@ -26,14 +26,14 @@
   
   .grid {
     display: grid;
-    grid-template-columns: repeat(10, 50px);
-    grid-template-rows: repeat(6, 50px);
+    grid-template-columns: repeat(12, 33px);
+    grid-template-rows: repeat(10, 33px);
     gap: 5px;
   }
   
   .square {
-    width: 50px;
-    height: 50px;
+    width: 33px;
+    height: 33px;
     background-color: rgb(27, 27, 27);
      display: flex;
     color: white;
