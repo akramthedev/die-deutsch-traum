@@ -109,7 +109,9 @@ const Home = () => {
       <br />
       <br />
       <br />
-      <div className='zrsfsrefzse'>Days Passed: {daysPassed}</div>
+      <div className='zrsfsrefzse'>The only way to get C1 within 4 months : Everyday 12 hours</div>
+      <br />
+     <div className='zrsfsrefzse'>Speaking 6h   |   Reading 2h  |  Listening 2h  |  Writting 2h</div>
       <br />
       <div className='zrsfsrefzse'>End Date: {endDate.toDateString()}</div>
       <br />
