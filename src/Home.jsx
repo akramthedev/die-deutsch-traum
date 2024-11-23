@@ -60,7 +60,7 @@ const Home = () => {
   return (
     <div className="container">
       <h1>Getting the TOEFL with 100 to study in Germany </h1>   
-      <h1>is the only key to marrying Hiba!</h1>   
+      <h1>is the only key to marrying ABIH !</h1>   
       <br />
       <div className="grid">
         {squares.map(({ day, hasPassed }, index) => (
