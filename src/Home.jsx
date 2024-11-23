@@ -59,8 +59,7 @@ const Home = () => {
 
   return (
     <div className="container">
-      <h1>Getting the TOEFL with 100 to study in Germany </h1>   
-      <h1>is the only key to marrying ABIH !</h1>   
+      <h1>The only way to get the gir of your dream ABIH</h1>   
       <br />
       <div className="grid">
         {squares.map(({ day, hasPassed }, index) => (
