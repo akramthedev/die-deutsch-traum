@@ -24,54 +24,67 @@ const Dokument = () => {
         Numéro enregistrement Botschaft : 22663930 
       </a>
              <br /> 
+             <br /> 
 <a>
         Emailing the TELC : service@telc.net 
       </a> 
-             <br /> 
+             <br />              <br /> 
+
 <a>
         Numéro Passeport : NS1562494  
       </a>
-            <br /> 
+            <br />              <br /> 
+
 <a href={Zer} download="ZertifikatB1.pdf">
         Zertifikat Deutsch B1 
       </a>
-           <br /> 
+           <br />              <br /> 
+
  <a href={LettreRecommendation} download="Lettre Recommendation Rachid.pdf">
         Lettre Recommendation - Rachid Dakir
       </a>
-           <br /> 
+           <br />              <br /> 
+
  <a href={LettreRecommendation2} download="Lettre Recommendation Imane.pdf">
         Lettre Recommendation - Imane Lmati
       </a>
-          <br /> 
+          <br />              <br /> 
+
   <a href={FicheLST} download="ficheLST.pdf">
         Fiche Module LST
       </a>
-         <br /> 
+         <br />              <br /> 
+
    <a href={FicheDEUST} download="FicheDEUST.pdf">
         Fiche Module DEUST
       </a>
-           <br /> 
+           <br />              <br /> 
+
  <a href={CV} download="cv.pdf">
         C.V
       </a>
-           <br /> 
+           <br />              <br /> 
+
  <a href={DC} download="desut certificate.pdf">
         DEUST Certificate
       </a>
-        <br /> 
+        <br />              <br /> 
+
     <a href={LC} download="lst certificate.pdf">
         LST Certificate
       </a>
-          <br /> 
+          <br />              <br /> 
+
   <a href={DN} download="deust notes.pdf">
         DEUST Notes
       </a>
-          <br /> 
+          <br />              <br /> 
+
   <a href={LN} download="lst notes.pdf">
         LST Notes
       </a>
-         <br /> 
+         <br />              <br /> 
+
    <a href={BAC} download="bac.pdf">
         BAC
       </a>
