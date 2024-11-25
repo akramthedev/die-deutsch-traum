@@ -7,7 +7,7 @@ const Home = () => {
 
   // Set the start date and end date
   const FirstDate = new Date("2024-11-20"); // The start date
-  const endDate = new Date("2025-02-14");   // The target end date
+  const endDate = new Date("2025-02-22");   // The target end date
 
   // State to track the number of days passed
   const [daysPassed, setDaysPassed] = useState(0);
@@ -47,7 +47,7 @@ const Home = () => {
   }, [FirstDate, endDate]); // Recalculate if FirstDate or endDate changes
 
   // Generate squares for the passed days
-  const totalDays = 86; // Number of days to track
+  const totalDays = 92; // Number of days to track
   const squares = Array.from({ length: totalDays }, (_, index) => {
     const currentDate = new Date(FirstDate);
     currentDate.setDate(FirstDate.getDate() + index); // Get the date for each square
