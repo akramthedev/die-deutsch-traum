@@ -47,7 +47,7 @@ const Home = () => {
   }, [FirstDate, endDate]); // Recalculate if FirstDate or endDate changes
 
   // Generate squares for the passed days
-  const totalDays = 92; // Number of days to track
+  const totalDays = 90; // Number of days to track
   const squares = Array.from({ length: totalDays }, (_, index) => {
     const currentDate = new Date(FirstDate);
     currentDate.setDate(FirstDate.getDate() + index); // Get the date for each square
@@ -59,7 +59,7 @@ const Home = () => {
 
   return (
     <div className="container">
-      <h1>The only way to get the gir of your dream ABIH</h1>   
+      <h1>The only way to get ABIH</h1>   
       <br />
       <div className="grid">
         {squares.map(({ day, hasPassed }, index) => (
@@ -72,8 +72,6 @@ const Home = () => {
       <div className="zrsfsrefzse">
         {daysRemaining} days remaining until your target date!
       </div>
-      <br />
-     <div className="zrsfsrefzse">The only way to get C1 within 3 months: Everyday 12 hours +</div>
       <br />
       <div onClick={() => { nav('/Dokument') }} className="zrsfsrefzse">Important Documents</div>
     </div>
