@@ -47,6 +47,13 @@ const Dokument = () => {
              <br /> 
              <br /> 
 
+
+      <a>
+        Numéro Guitar preparation : 0668620025
+      </a>
+             <br /> 
+             <br /> 
+
      
 <a>
         Emailing the TELC : service@telc.net 
