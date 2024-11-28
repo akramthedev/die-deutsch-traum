@@ -56,6 +56,12 @@ const Dokument = () => {
 
 
 
+    
+      <a>
+       visa-processing@zentral.auswaertiges-amt.de  :   thsi email if you wanna ask where your folder is in list and also mention num passport and TLS reference
+      </a>
+             <br /> 
+             <br /> 
 
 
 
@@ -68,6 +74,14 @@ const Dokument = () => {
 
 
 
+
+
+
+     
+
+ 
+
+     
 
 
      
