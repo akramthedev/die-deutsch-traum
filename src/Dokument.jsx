@@ -25,6 +25,29 @@ const Dokument = () => {
       </a>
              <br /> 
              <br /> 
+
+
+      <a>
+        Numéro 1 rachid dakir : 0648030094
+      </a>
+             <br /> 
+             <br /> 
+
+
+       <a>
+        Numéro 2 rachid dakir : 0710402556
+      </a>
+             <br /> 
+             <br /> 
+
+
+      <a>
+        Numéro Othman Scolarité : 0628147278
+      </a>
+             <br /> 
+             <br /> 
+
+     
 <a>
         Emailing the TELC : service@telc.net 
       </a> 
