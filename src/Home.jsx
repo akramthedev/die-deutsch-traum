@@ -72,10 +72,10 @@ const Home = () => {
   const handleSquareClick = (dateKey) => {
     if (notes[dateKey]) {
       // If a note exists, show an alert with its content
-      alert(`Note for ${dateKey}: ${notes[dateKey]}`);
+      alert(`${notes[dateKey]}`);
     } else {
       // Otherwise, prompt for a new note
-      const note = prompt(`Add a note for ${dateKey}:`);
+      const note = prompt(`Add a note :`);
       if (note) {
         setNotes({ ...notes, [dateKey]: note });
       }
