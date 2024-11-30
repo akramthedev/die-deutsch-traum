@@ -116,7 +116,7 @@ const Home = () => {
 
   return (
     <div className="container">
-      <h1>The only way to get ABIH</h1>
+      <h1>The only way to get H</h1>
       <br />
       <p>4h Speaking | 4h writing | 1h listening</p>
       <br />
