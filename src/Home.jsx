@@ -1,4 +1,4 @@
- import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
 import './App.css';
 
@@ -16,57 +16,77 @@ const Home = () => {
   const FirstDate = normalizeToMidnight(new Date("2024-11-20"));
   const endDate = normalizeToMidnight(new Date("2025-02-22"));
 
-  // State to track the number of days passed and remaining
   const [daysPassed, setDaysPassed] = useState(0);
   const [daysRemaining, setDaysRemaining] = useState(0);
+  const [notes, setNotes] = useState({}); // Stores notes for dates
 
-  // Function to calculate days remaining
+  useEffect(() => {
+    // Load notes from localStorage on mount
+    const storedNotes = JSON.parse(localStorage.getItem("notes")) || {};
+    setNotes(storedNotes);
+  }, []);
+
+  // Save notes to localStorage whenever they change
+  useEffect(() => {
+    localStorage.setItem("notes", JSON.stringify(notes));
+  }, [notes]);
+
   const calculateDaysRemaining = () => {
     const now = normalizeToMidnight(new Date());
     const differenceInTime = endDate - now;
-    const differenceInDays = Math.ceil(differenceInTime / (1000 * 3600 * 24)); // Convert ms to days
-    return Math.max(differenceInDays, 0); // Ensure days remaining is not negative
+    const differenceInDays = Math.ceil(differenceInTime / (1000 * 3600 * 24));
+    return Math.max(differenceInDays, 0);
   };
 
-  // Function to calculate days passed
   const calculateDaysPassed = () => {
     const now = normalizeToMidnight(new Date());
     const differenceInTime = now - FirstDate;
-    const differenceInDays = Math.floor(differenceInTime / (1000 * 3600 * 24)); // Convert ms to days
-    return Math.min(differenceInDays, 90); // Ensure we don't exceed total days
+    const differenceInDays = Math.floor(differenceInTime / (1000 * 3600 * 24));
+    return Math.min(differenceInDays, 90);
   };
 
-  // Use useEffect to calculate days passed and remaining
   useEffect(() => {
     setDaysPassed(calculateDaysPassed());
     setDaysRemaining(calculateDaysRemaining());
 
-    // Recalculate every 15 minutes
     const interval = setInterval(() => {
       setDaysPassed(calculateDaysPassed());
       setDaysRemaining(calculateDaysRemaining());
-    }, 900000); // 15 minutes in milliseconds
+    }, 900000);
 
-    return () => clearInterval(interval); // Cleanup on unmount
+    return () => clearInterval(interval);
   }, [FirstDate, endDate]);
 
-  // Generate squares for the days
-  const totalDays = 90; // Total days to track
+  const totalDays = 90;
   const squares = Array.from({ length: totalDays }, (_, index) => {
     const currentDate = new Date(FirstDate);
     currentDate.setDate(FirstDate.getDate() + index);
+    const dateKey = currentDate.toISOString().split("T")[0]; // Format as YYYY-MM-DD
     return {
       day: currentDate.getDate(),
       hasPassed: index < daysPassed,
+      dateKey,
     };
   });
 
-  // Fullscreen toggle handlers
+  const handleSquareClick = (dateKey) => {
+    if (notes[dateKey]) {
+      // If a note exists, show an alert with its content
+      alert(`Note for ${dateKey}: ${notes[dateKey]}`);
+    } else {
+      // Otherwise, prompt for a new note
+      const note = prompt(`Add a note for ${dateKey}:`);
+      if (note) {
+        setNotes({ ...notes, [dateKey]: note });
+      }
+    }
+  };
+
   const toggleFullscreen = () => {
-    const element = document.documentElement; // The whole page
+    const element = document.documentElement;
     if (!document.fullscreenElement) {
       element.requestFullscreen().catch((err) => {
-        console.error(`Error attempting to enable full-screen mode: ${err.message}`);
+        console.error(`Error enabling full-screen mode: ${err.message}`);
       });
     }
   };
@@ -74,12 +94,11 @@ const Home = () => {
   const exitFullscreen = () => {
     if (document.fullscreenElement) {
       document.exitFullscreen().catch((err) => {
-        console.error(`Error attempting to exit full-screen mode: ${err.message}`);
+        console.error(`Error exiting full-screen mode: ${err.message}`);
       });
     }
   };
 
-  // Listen for key presses
   useEffect(() => {
     const handleKeyDown = (event) => {
       if (event.key === "Enter") {
@@ -91,7 +110,7 @@ const Home = () => {
 
     window.addEventListener("keydown", handleKeyDown);
     return () => {
-      window.removeEventListener("keydown", handleKeyDown); // Cleanup listener on unmount
+      window.removeEventListener("keydown", handleKeyDown);
     };
   }, []);
 
@@ -100,8 +119,12 @@ const Home = () => {
       <h1>The only way to get ABIH</h1>
       <br />
       <div className="grid">
-        {squares.map(({ day, hasPassed }, index) => (
-          <div key={index} className={`square ${hasPassed ? 'passed' : ''}`}>
+        {squares.map(({ day, hasPassed, dateKey }, index) => (
+          <div
+            key={index}
+            className={`square ${hasPassed ? 'passed' : ''} ${notes[dateKey] ? 'with-note' : ''}`}
+            onClick={() => handleSquareClick(dateKey)}
+          >
             {day}
           </div>
         ))}
