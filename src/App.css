@@ -17,7 +17,11 @@
     height: 100vh;
     overflow : hidden;
 }
-  
+  p{
+
+    color : white !important ;
+    
+  }
   h1 {
     font-size: 30px;
     margin-bottom: 20px;
