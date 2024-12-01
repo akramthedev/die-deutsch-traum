@@ -38,8 +38,13 @@ const TimeManag = () => {
     if (newTask.trim() !== '') {
       const lowerCaseTask = newTask.toLowerCase();
 
-      const isSpeakingTask =
-        lowerCaseTask.includes('s') && lowerCaseTask.includes('p') && lowerCaseTask.includes('k');
+      const isSpeakingTask2Hours =
+        lowerCaseTask.includes('s') && lowerCaseTask.includes('p') && lowerCaseTask.includes('k')  && lowerCaseTask.includes('2');  && lowerCaseTask.includes('h');
+
+      const isSpeakingTask1Hour =
+        lowerCaseTask.includes('s') && lowerCaseTask.includes('p') && lowerCaseTask.includes('k') && lowerCaseTask.includes('1');  && lowerCaseTask.includes('h');
+ const isSpeakingTask3Hour =
+        lowerCaseTask.includes('s') && lowerCaseTask.includes('p') && lowerCaseTask.includes('k') && lowerCaseTask.includes('3');  && lowerCaseTask.includes('h');
 
       const isWritingTask =
         lowerCaseTask.includes('w') && lowerCaseTask.includes('r') && lowerCaseTask.includes('t');
@@ -49,8 +54,9 @@ const TimeManag = () => {
         lowerCaseTask.includes('i') && lowerCaseTask.includes('e') && lowerCaseTask.includes('l') && lowerCaseTask.includes('t') && lowerCaseTask.includes('s') && lowerCaseTask.includes('e') && lowerCaseTask.includes('x');
     
 
-      const taskXp = isSpeakingTask
-        ? 500
+      const taskXp = isSpeakingTask1Hour
+        ? 30
+        :isSpeakingTask2Hours ? 60 : isSpeakingTask3Hour ? 90 
         : isWritingTask
         ? 20
         : isTotalExam 
