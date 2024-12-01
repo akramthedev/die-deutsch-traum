@@ -118,7 +118,9 @@ const Home = () => {
     <div className="container">
       <h1>The only way to get H</h1>
       <br />
-      <p>4h Speaking | 4h writing | 1h listening</p>
+     <div onClick={() => nav('/TimeManag')} className="zrsfsrefzse">
+        Gamify Your Tasks
+      </div>
       <br />
       <div className="grid">
         {squares.map(({ day, hasPassed, dateKey }, index) => (
