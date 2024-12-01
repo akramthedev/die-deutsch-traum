@@ -65,3 +65,112 @@
   background-color: blueviolet;
   color: white;
 }
+
+
+
+
+
+
+
+
+
+.jackkksonn{
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+}
+
+
+.TimeManag {
+  max-width: 500px;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #000000;
+  border-radius: 10px;
+  background-color: #070707;
+}
+
+.TimeManag button {
+  margin-left: 10px;
+  border-radius: 0.3rem;
+  background-color: blueviolet;
+  color: white;
+  width: 130px;
+  height: 44px;  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.TimeManag input{
+  outline: none;  width: 300px;
+  height: 44px;
+  padding: 0 1rem;
+  border: none;
+  border-radius: 0.3rem;
+}
+
+.TimeManag h1,.TimeManag p {
+  color: white;
+  margin-top: 0.5rem;
+
+}
+
+.TimeManag p {
+  letter-spacing: 1.3px;
+}
+.TimeManag h1{
+  font-size: 19px;
+  margin-bottom: 2rem;
+  margin-top: 0rem !important;
+}
+
+.TimeManag ul li button:first-child{
+  margin-left: 10px;
+  border-radius: 0.3rem;
+  background-color: #212121;
+  color: white !important;
+  width: 40px;
+  height: 40px;  outline: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.TimeManag ul li button:last-child{
+  margin-left: 10px;
+  background-color: #212121;
+  border-radius: 0.3rem;
+  color: white !important;
+  width: 40px;
+  height: 40px;  outline: none;
+  border: none;
+  border-radius: 50% !important;
+  cursor: pointer;
+}
+
+.TimeManag ul li button:hover{
+  background-color: #363636;
+}
+.TimeManag ul li{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 1rem 0;
+  color: white;
+}
+
+.TimeManag ul li div{
+  display: flex;
+  align-items: center;
+}
+
+.TimeManag .eusrhfduohsougfhosdhf{
+  max-height: 390px;
+  height: auto;
+  overflow-y: auto;
+  margin-top: 1rem;
+  padding-right: 0.7rem;
+}
