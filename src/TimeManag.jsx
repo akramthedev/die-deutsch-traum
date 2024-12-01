@@ -34,39 +34,68 @@ const TimeManag = () => {
     localStorage.setItem('xpForNextLevel', xpForNextLevel);
   }, [tasks, xp, level, xpForNextLevel]);
 
+ 
+
+
+
   const addTask = () => {
-    if (newTask.trim() !== '') {
-      const lowerCaseTask = newTask.toLowerCase();
+  if (newTask.trim() !== '') {
+    const lowerCaseTask = newTask.toLowerCase();
 
-      const isSpeakingTask2Hours =
-        lowerCaseTask.includes('s') && lowerCaseTask.includes('p') && lowerCaseTask.includes('k')  && lowerCaseTask.includes('2');  && lowerCaseTask.includes('h');
+    // Check for specific task types
+    const isSpeakingTask2Hours =
+      lowerCaseTask.includes('s') &&
+      lowerCaseTask.includes('p') &&
+      lowerCaseTask.includes('k') &&
+      lowerCaseTask.includes('2') &&
+      lowerCaseTask.includes('h');
 
-      const isSpeakingTask1Hour =
-        lowerCaseTask.includes('s') && lowerCaseTask.includes('p') && lowerCaseTask.includes('k') && lowerCaseTask.includes('1');  && lowerCaseTask.includes('h');
- const isSpeakingTask3Hour =
-        lowerCaseTask.includes('s') && lowerCaseTask.includes('p') && lowerCaseTask.includes('k') && lowerCaseTask.includes('3');  && lowerCaseTask.includes('h');
+    const isSpeakingTask1Hour =
+      lowerCaseTask.includes('s') &&
+      lowerCaseTask.includes('p') &&
+      lowerCaseTask.includes('k') &&
+      lowerCaseTask.includes('1') &&
+      lowerCaseTask.includes('h');
 
-      const isWritingTask =
-        lowerCaseTask.includes('w') && lowerCaseTask.includes('r') && lowerCaseTask.includes('t');
+    const isSpeakingTask3Hour =
+      lowerCaseTask.includes('s') &&
+      lowerCaseTask.includes('p') &&
+      lowerCaseTask.includes('k') &&
+      lowerCaseTask.includes('3') &&
+      lowerCaseTask.includes('h');
 
+    const isWritingTask =
+      lowerCaseTask.includes('w') &&
+      lowerCaseTask.includes('r') &&
+      lowerCaseTask.includes('t');
 
-        const isTotalExam =
-        lowerCaseTask.includes('i') && lowerCaseTask.includes('e') && lowerCaseTask.includes('l') && lowerCaseTask.includes('t') && lowerCaseTask.includes('s') && lowerCaseTask.includes('e') && lowerCaseTask.includes('x');
-    
+    const isTotalExam =
+      lowerCaseTask.includes('i') &&
+      lowerCaseTask.includes('e') &&
+      lowerCaseTask.includes('l') &&
+      lowerCaseTask.includes('t') &&
+      lowerCaseTask.includes('s') &&
+      lowerCaseTask.includes('e') &&
+      lowerCaseTask.includes('x');
 
-      const taskXp = isSpeakingTask1Hour
-        ? 30
-        :isSpeakingTask2Hours ? 60 : isSpeakingTask3Hour ? 90 
-        : isWritingTask
-        ? 20
-        : isTotalExam 
-        ? 50
-        : 10;
+    // Assign XP based on task type
+    const taskXp = isSpeakingTask1Hour
+      ? 30
+      : isSpeakingTask2Hours
+      ? 60
+      : isSpeakingTask3Hour
+      ? 90
+      : isWritingTask
+      ? 20
+      : isTotalExam
+      ? 50
+      : 10;
 
-      setTasks([...tasks, { text: newTask, completed: false, xp: taskXp }]);
-      setNewTask('');
-    }
-  };
+    // Add the new task
+    setTasks([...tasks, { text: newTask, completed: false, xp: taskXp }]);
+    setNewTask('');
+  }
+};
 
   
   
