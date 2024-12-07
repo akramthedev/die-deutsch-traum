@@ -24,7 +24,26 @@ const Dokument = () => {
         Numéro enregistrement Botschaft : 22663930 
       </a>
              <br /> 
+
+
+     
+              <a>
+        Aksing ABout somethign in Viza : visa-processing@zentrale.auswaertiges-amt.de 
+      </a>
              <br /> 
+      <a>
+        Aksing ABout somethign in Viza : Visa@raba.diplo.de 
+      </a>
+             <br /> 
+      <a>
+        Aksing ABout somethign in Viza : visa@raba.auswaertiges-amt.de 
+      </a>
+             <br /> 
+      <a>
+        Aksing ABout somethign in Viza : zzVISABVA@bva.bund.de 
+      </a>
+             <br />        <br /> 
+   
 
 
       <a>
