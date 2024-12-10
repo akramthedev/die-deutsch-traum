@@ -81,7 +81,7 @@ const TimeManag = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       const now = new Date();
-      if (now.getHours() === 23 && now.getMinutes() === 30) {
+      if (now.getHours() === 23 && now.getMinutes() === 45) {
         console.log("It's 22:59. Evaluating today's tasks...");
         evaluateDay();
       }
