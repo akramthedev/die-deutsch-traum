@@ -27,23 +27,23 @@ const TimeManag = () => {
   };
 
   // Function to load tasks for a given day
-  const loadTasksForDay = (day) => {
-    const savedTasks = JSON.parse(localStorage.getItem(day));
-    if (savedTasks) {
-      setTasks(savedTasks);
-    } else if (tasksByDay[day]) {
-      const initialTasks = tasksByDay[day]
-        .filter((task) => typeof task === "string") // Filter out invalid entries
-        .map((task) => ({
-          name: task,
-          completed: false,
-        }));
-      setTasks(initialTasks);
-      localStorage.setItem(day, JSON.stringify(initialTasks));
-    } else {
-      setTasks([]);
-    }
-  };
+const loadTasksForDay = (day) => {
+  const savedTasks = JSON.parse(localStorage.getItem(day));
+  if (savedTasks) {
+    setTasks(savedTasks);
+  } else if (tasksByDay[day]) {
+    const initialTasks = tasksByDay[day]
+      .filter((task) => typeof task === "string" && task.trim() !== "") // Ensure valid entries
+      .map((task) => ({
+        name: task,
+        completed: false,
+      }));
+    setTasks(initialTasks);
+    localStorage.setItem(day, JSON.stringify(initialTasks));
+  } else {
+    setTasks([]);
+  }
+};
   
 
   // Function to evaluate if tasks are completed for the current day
