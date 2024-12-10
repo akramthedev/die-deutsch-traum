@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 
 const tasksByDay = {
-  "2024-12-10": ["Writing Task 1 : Pie Charts", "Writing Task 1 : Tables","Writing Task 1 : Diagrams", "Writing Task 1 : Maps", , "Speaking Task 3 : Finish 9 papers"],
+  "2024-12-10": ["Writing Task 1 : Pie Charts", "Writing Task 1 : Tables","Writing Task 1 : Diagrams", "Writing Task 1 : Maps", "Speaking Task 3 : Finish 9 papers"],
   "2024-12-11": ["Writing Task 2 : 10", "Writing Task 2 : 11","Writing Task 2 : 12", "Writing Task 2 : 13", "Writing Task 2 : 14", "Writing Task 2 : 15", "Writing Task 2 : 16", "Writing Task 2 : 17", "Writing Task 2 : 18", "Writing Task 2 : 19"],
   "2024-12-12": ["Writing Task 2 : 20", "Writing Task 2 : 21","Writing Task 2 : 22", "Writing Task 2 : 23", "Writing Task 2 : 24", "Writing Task 2 : 25", "Writing Task 2 : 26", "Writing Task 2 : 27", "Writing Task 2 : 28", "Writing Task 2 : 29"],
   "2024-12-13": ["Writing Task 2 : 30", "Writing Task 2 : 31","Writing Task 2 : 32", "Writing Task 2 : 33", "Writing Task 2 : 34", "Writing Task 2 : 35", "Writing Task 2 : 36", "Writing Task 2 : 37", "Writing Task 2 : 38", "Writing Task 2 : 39"],
