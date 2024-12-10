@@ -119,7 +119,7 @@ const Home = () => {
       <h1>The only way to get H</h1>
       <br />
      <div onClick={() => nav('/TimeManag')} className="zrsfsrefzse">
-        Gamify Your Tasks
+        Task Manager
       </div>
       <br />
       <div className="grid">
