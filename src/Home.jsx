@@ -116,7 +116,7 @@ const Home = () => {
 
   return (
     <div className="container">
-      <h1>The only way to get H</h1>
+      <h1>The only way to get a German G</h1>
       <br />
      <div onClick={() => nav('/TimeManag')} className="zrsfsrefzse">
         Task Manager
