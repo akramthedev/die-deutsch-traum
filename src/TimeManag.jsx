@@ -12,7 +12,7 @@ const tasksByDay = {
   "2024-12-17": ["Writing Task 2 : 70", "Writing Task 2 : 71","Writing Task 2 : 72", "Writing Task 2 : 73", "Writing Task 2 : 74", "Writing Task 2 : 75", "Writing Task 2 : 76", "Writing Task 2 : 77", "Writing Task 2 : 78", "Writing Task 2 : 79"],
   "2024-12-18": ["Writing Task 2 : 80", "Writing Task 2 : 81","Writing Task 2 : 82", "Writing Task 2 : 83", "Writing Task 2 : 84", "Writing Task 2 : 85", "Writing Task 2 : 86", "Writing Task 2 : 87", "Writing Task 2 : 88", "Writing Task 2 : 89"],
   "2024-12-19": ["Technopark Conference 16:00 -> 18:00 - check Gmail","Talk With Scolarité Settat - LST diplomate", "Writing Task 2 : 90", "Writing Task 2 : 91","Writing Task 2 : 92", "Writing Task 2 : 93", "Writing Task 2 : 94", "Writing Task 2 : 95", "Writing Task 2 : 96"],
-  "2024-12-20": ["Start Memorization of all writen data", "Register for IELTS exam", "END of Internship", "Starting IELTS EXAM preparation from tomorrow :)"],
+  "2024-12-20": ["Watch This Video Before Taking any exam : https://youtu.be/xGtKdsVxV8A?si=w9vc3WmNN8lilg9j","Start Memorization of all writen data", "Register for IELTS exam", "END of Internship", "Starting IELTS EXAM preparation from tomorrow :)"],
 };
 
 const TimeManag = () => {
