@@ -77,64 +77,85 @@
 
 
 
+/* General Styling */
+.Tracking {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  background-color: #f4f4f9;
+  font-family: Arial, sans-serif;
+}
 
-
-
-.esirhghsfhisd{
-  height: 100vh;
+/* Container for the tracking table */
+.caseOO {
+  max-width: 800px;
   width: 100%;
-  overflow: hidden;
-  padding: 0 5rem;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Year block styling */
+.yearBlock {
+  margin-bottom: 30px;
+}
+
+.yearTitle {
+  font-size: 1.5em;
+  color: #333;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+/* Table Styling */
+.bodyTable {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.row {
   display: flex;
   align-items: center;
-  justify-content: center;
+  gap: 10px;
+  padding: 10px;
+  background-color: #fafafa;
+  border: 1px solid #ddd;
+  border-radius: 6px;
 }
 
-.zrfsuhsdfwo{
-  width: 100%;
-  max-width: 600px;
-  height: 80%;
-  overflow-y: auto;
+/* Date cell */
+.dateCell {
+  flex: 2;
+  font-weight: bold;
+  text-align: left;
+  color: #555;
 }
 
-.zrfsuhsdfwo h1{
+/* Test buttons */
+.checkOrNot {
+  flex: 1;
+  padding: 10px;
   text-align: center;
-  height: 60px;
-  font-size: 25px;
-  font-weight: 800;
-  color : black;
-
-}
-.ZUSHDFOUHSUDOFH li, .eushfdwohswdf li{
-  list-style: none;
-  font-size: 16px;
-  padding: 0 0.5rem;  display: flex;
-  align-items: center;
-
-}
-.zrfsuhsdfwo h2{
-  font-size: 18px;
-  font-weight: 700;
-  margin: 0.5rem 0;
-  color : black;
-}
-
-.ZUSHDFOUHSUDOFH li{
-  padding: 0 0.5rem;
-  height: 30px;
-  margin-bottom: 0.8rem;
-}
-
-.ZUSHDFOUHSUDOFH li span{
-  font-size: 16px;
-  width: calc(100% - 25px);
-}
-.ZUSHDFOUHSUDOFH li input{
-  margin-right: 0.5rem;
-  height: 25px;
+  background-color: #e0e0e0;
+  color: #555;
+  border-radius: 4px;
   cursor: pointer;
-  width: 25px;
-  border: 1px solid gray;
-  border-radius: 0 !important;
+  transition: all 0.3s ease;
 }
 
+.checkOrNot.completed {
+  background-color: #4caf50;
+  color: white;
+}
+
+.checkOrNot:hover {
+  background-color: #d3d3d3;
+}
+
+
+.checkOrNot.completed:hover {
+  background-color: #4caf50;
+  color: white;
+}
