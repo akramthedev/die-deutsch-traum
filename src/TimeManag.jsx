@@ -63,7 +63,7 @@ const TimeManag = () => {
   const categories = ["Test 1", "Test 2"];
 
   return (
-    <div className="Tracking">      <h1>Reading Track</h1>>
+    <div className="Tracking">      <h1>Reading Track</h1>
 
       <div className="caseOO">
         {Object.entries(exams).map(([year, exams]) => (
