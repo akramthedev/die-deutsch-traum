@@ -64,7 +64,7 @@ const TimeManag2 = () => {
 
   return (
     <div className="Tracking">
-      <h1>Listening Track</h1>>
+      <h1>Listening Track</h1>
       <div className="caseOO">
         {Object.entries(exams).map(([year, exams]) => (
           <div key={year} className="yearBlock">
