@@ -4,6 +4,7 @@ import Home from './Home.jsx';
 import Dokument from './Dokument.jsx';
 import Todo from "./Todo.jsx";
 import TimeManag from "./TimeManag.jsx";
+import TimeManag2 from "./TimeManag2.jsx";
 
 function App() {
   return (
