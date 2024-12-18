@@ -43,13 +43,13 @@ const TimeManag = () => {
     localStorage.setItem("examNotes", JSON.stringify(notes));
   }, [progress, notes]);
 
-  // Handle cell toggle and prompt for note
+  // Handle cell toggle and prompt for note for specific test within an exam
   const toggleCell = (exam, category) => {
-    const note = prompt("Enter the Note result for this exam:");
+    const note = prompt(`Enter the Note result for ${category} of ${exam}:`);
     if (note !== null && note.trim() !== "") {
       setNotes((prevNotes) => ({
         ...prevNotes,
-        [exam]: note
+        [`${exam}-${category}`]: note // Unique key for each exam-category combination
       }));
       setProgress((prev) => {
         const updated = { ...prev };
@@ -80,8 +80,8 @@ const TimeManag = () => {
                       }`}
                       onClick={() => toggleCell(exam, category)}
                     >
-                      {/* Show note if available, else show category */}
-                      {notes[exam] ? notes[exam] : category}
+                      {/* Retrieve the note for specific test of the exam */}
+                      {notes[`${exam}-${category}`] ? notes[`${exam}-${category}`] : category}
                     </div>
                   ))}
                 </div>
