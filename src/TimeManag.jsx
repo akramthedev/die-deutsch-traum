@@ -27,25 +27,37 @@ const TimeManag = () => {
     return exams;
   }
 
-  // Retrieve saved progress from localStorage or initialize
+  // Retrieve saved progress and notes from localStorage or initialize
   const [progress, setProgress] = useState(() => {
     const saved = localStorage.getItem("trackingProgress");
     return saved ? JSON.parse(saved) : {};
   });
+  const [notes, setNotes] = useState(() => {
+    const savedNotes = localStorage.getItem("examNotes");
+    return savedNotes ? JSON.parse(savedNotes) : {};
+  });
 
-  // Update localStorage whenever progress changes
+  // Update localStorage whenever progress or notes change
   useEffect(() => {
     localStorage.setItem("trackingProgress", JSON.stringify(progress));
-  }, [progress]);
+    localStorage.setItem("examNotes", JSON.stringify(notes));
+  }, [progress, notes]);
 
-  // Handle cell toggle
+  // Handle cell toggle and prompt for note
   const toggleCell = (exam, category) => {
-    setProgress((prev) => {
-      const updated = { ...prev };
-      if (!updated[exam]) updated[exam] = {};
-      updated[exam][category] = !updated[exam][category];
-      return updated;
-    });
+    const note = prompt("Enter the Note result for this exam:");
+    if (note !== null && note.trim() !== "") {
+      setNotes((prevNotes) => ({
+        ...prevNotes,
+        [exam]: note
+      }));
+      setProgress((prev) => {
+        const updated = { ...prev };
+        if (!updated[exam]) updated[exam] = {};
+        updated[exam][category] = true; // Assume completion when note is added
+        return updated;
+      });
+    }
   };
 
   const categories = ["Test 1", "Test 2"];
@@ -67,7 +79,10 @@ const TimeManag = () => {
                         progress[exam] && progress[exam][category] ? "completed" : ""
                       }`}
                       onClick={() => toggleCell(exam, category)}
-                    >{category}</div>
+                    >
+                      {/* Show note if available, else show category */}
+                      {notes[exam] ? notes[exam] : category}
+                    </div>
                   ))}
                 </div>
               ))}
