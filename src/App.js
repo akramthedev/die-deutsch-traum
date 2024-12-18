@@ -14,7 +14,7 @@ function App() {
           <Route path='/Dokument' element={<Dokument />} />
           <Route path='/todo' element={<Todo />} />
             <Route path="/TimeManag" element={<TimeManag />} />
-
+            <Route path="/TimeManag2" element={<TimeManag2 />} />
         </Routes>
       </BrowserRouter>
     </div>
