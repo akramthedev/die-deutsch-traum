@@ -29,18 +29,18 @@ const TimeManag2 = () => {
 
   // Retrieve saved progress and notes from localStorage or initialize
   const [progress, setProgress] = useState(() => {
-    const saved = localStorage.getItem("trackingProgress");
+    const saved = localStorage.getItem("trackingProgress2");
     return saved ? JSON.parse(saved) : {};
   });
   const [notes, setNotes] = useState(() => {
-    const savedNotes = localStorage.getItem("examNotes");
+    const savedNotes = localStorage.getItem("examNotes2");
     return savedNotes ? JSON.parse(savedNotes) : {};
   });
 
   // Update localStorage whenever progress or notes change
   useEffect(() => {
-    localStorage.setItem("trackingProgress", JSON.stringify(progress));
-    localStorage.setItem("examNotes", JSON.stringify(notes));
+    localStorage.setItem("trackingProgress2", JSON.stringify(progress));
+    localStorage.setItem("examNotes2", JSON.stringify(notes));
   }, [progress, notes]);
 
   // Handle cell toggle and prompt for note for specific test within an exam
