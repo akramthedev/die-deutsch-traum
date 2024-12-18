@@ -119,7 +119,10 @@ const Home = () => {
       <h1>The only way to get a German G</h1>
       <br />
      <div onClick={() => nav('/TimeManag')} className="zrsfsrefzse">
-        Task Manager
+        Reading Track
+      </div>
+      <div onClick={() => nav('/TimeManag2')} className="zrsfsrefzse">
+        Listening Track
       </div>
       <br />
       <div className="grid">
