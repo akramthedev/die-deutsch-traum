@@ -60,7 +60,7 @@ const TimeManag = () => {
     }
   };
 
-  const categories = ["Test 1", "Test 2"];
+  const categories = ["Test 1", "Test 2", "Test 3", "Test 4"];
 
   return (
     <div className="Tracking">      <h1>Reading Track</h1>
