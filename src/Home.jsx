@@ -13,7 +13,7 @@ const Home = () => {
   };
 
   // Set the start date and end date
-  const FirstDate = normalizeToMidnight(new Date("2024-11-24"));
+  const FirstDate = normalizeToMidnight(new Date("2024-12-24"));
   const endDate = normalizeToMidnight(new Date("2025-01-18"));
 
   const [daysPassed, setDaysPassed] = useState(0);
