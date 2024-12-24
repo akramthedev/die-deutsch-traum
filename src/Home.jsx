@@ -13,7 +13,7 @@ const Home = () => {
   };
 
   // Set the start date and end date
-  const FirstDate = normalizeToMidnight(new Date("2024-12-24"));
+  const FirstDate = normalizeToMidnight(new Date("2024-12-25"));
   const endDate = normalizeToMidnight(new Date("2025-01-18"));
 
   const [daysPassed, setDaysPassed] = useState(0);
@@ -57,7 +57,7 @@ const Home = () => {
     return () => clearInterval(interval);
   }, [FirstDate, endDate]);
 
-  const totalDays = 25;
+  const totalDays = 24;
   const squares = Array.from({ length: totalDays }, (_, index) => {
     const currentDate = new Date(FirstDate);
     currentDate.setDate(FirstDate.getDate() + index);
