@@ -119,6 +119,16 @@ const Home = () => {
       <h1>Wanna work in DE, US or UK ?</h1>
       <h1>TOEFL is the only chance</h1>
       <br />
+      <div onClick={() => nav('/TimeManag')} className="zrsfsrefzse">
+        Reading Track
+      </div>
+          <br />
+
+      <div onClick={() => nav('/TimeManag2')} className="zrsfsrefzse">
+        Listening Track
+      </div>
+            <br />
+
       <div className="grid">
         {squares.map(({ day, hasPassed, dateKey }, index) => (
           <div
