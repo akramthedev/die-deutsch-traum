@@ -1,144 +1,89 @@
-import { useNavigate } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
 import './App.css';
-
+import {useNavigate} from 'react-router-dom'
 const Home = () => {
+  const targetDate = new Date('2024-11-04T00:00:00'); // Target date (YYYY-MM-DD)
   const nav = useNavigate();
-
-  // Normalize dates to local midnight
-  const normalizeToMidnight = (date) => {
-    const normalized = new Date(date);
-    normalized.setHours(0, 0, 0, 0); // Set to midnight
-    return normalized;
+  const calculateTimeLeft = () => {
+    const now = new Date();
+    const difference = targetDate - now; // Difference in milliseconds
+    // If the target date has passed, return 0 for all units
+    if (difference <= 0) {
+      return { days: 0, hours: 0, minutes: 0, seconds: 0 };
+    }
+    // Convert the difference into days, hours, minutes, and seconds
+    const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+    return { days, hours, minutes, seconds };
   };
-
-  // Set the start date and end date
-  const FirstDate = normalizeToMidnight(new Date("2024-12-27"));
-  const endDate = normalizeToMidnight(new Date("2025-02-14")); 
-
-  const [daysPassed, setDaysPassed] = useState(0);
-  const [daysRemaining, setDaysRemaining] = useState(0);
-  const [notes, setNotes] = useState({}); // Stores notes for dates
-
+  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
+  // Countdown logic: update the time left every second
   useEffect(() => {
-    // Load notes from localStorage on mount
-    const storedNotes = JSON.parse(localStorage.getItem("notes")) || {};
-    setNotes(storedNotes);
+    const timer = setInterval(() => {
+      setTimeLeft(calculateTimeLeft());
+    }, 1000);
+    return () => clearInterval(timer); // Cleanup interval on unmount
   }, []);
-
-  // Save notes to localStorage whenever they change
-  useEffect(() => {
-    localStorage.setItem("notes", JSON.stringify(notes));
-  }, [notes]);
-
-  const calculateDaysRemaining = () => {
-    const now = normalizeToMidnight(new Date());
-    const differenceInTime = endDate - now;
-    const differenceInDays = Math.ceil(differenceInTime / (1000 * 3600 * 24));
-    return Math.max(differenceInDays, 0);
+  // Format the time left into a readable format
+  const formatTime = () => {
+    const { days, hours, minutes, seconds } = timeLeft;
+    return (
+      <div className='timer-display'>
+        <button>
+          <span>
+            {days}
+          </span>
+          <span>
+            Tage
+          </span>
+        </button>
+        <button>
+          <span>
+            {hours.toString().padStart(2, '0')}
+          </span>
+          <span>
+            Stunden
+          </span>
+        </button>
+        <button>
+          <span>
+            {minutes.toString().padStart(2, '0')}
+          </span>
+          <span>
+            Minuten
+          </span>
+        </button>
+        <button>
+          <span>
+            {seconds.toString().padStart(2, '0')}
+          </span>
+          <span>
+            Sekunden
+          </span>
+        </button>
+      </div>
+    );
   };
-
-  const calculateDaysPassed = () => {
-    const now = normalizeToMidnight(new Date());
-    const differenceInTime = now - FirstDate;
-    const differenceInDays = Math.floor(differenceInTime / (1000 * 3600 * 24));
-    return Math.min(differenceInDays, 90);
-  };
-
-  useEffect(() => {
-    setDaysPassed(calculateDaysPassed());
-    setDaysRemaining(calculateDaysRemaining());
-
-    const interval = setInterval(() => {
-      setDaysPassed(calculateDaysPassed());
-      setDaysRemaining(calculateDaysRemaining());
-    }, 900000);
-
-    return () => clearInterval(interval);
-  }, [FirstDate, endDate]);
-
-  const totalDays = 49;
-  const squares = Array.from({ length: totalDays }, (_, index) => {
-    const currentDate = new Date(FirstDate);
-    currentDate.setDate(FirstDate.getDate() + index);
-    const dateKey = currentDate.toISOString().split("T")[0]; // Format as YYYY-MM-DD
-    return {
-      day: currentDate.getDate(),
-      hasPassed: index < daysPassed,
-      dateKey,
-    };
-  });
-
-  const handleSquareClick = (dateKey) => {
-    if (notes[dateKey]) {
-      // If a note exists, show an alert with its content
-      alert(`${notes[dateKey]}`);
-    } else {
-      // Otherwise, prompt for a new note
-      const note = prompt(`Add a note :`);
-      if (note) {
-        setNotes({ ...notes, [dateKey]: note });
-      }
-    }
-  };
-
-  const toggleFullscreen = () => {
-    const element = document.documentElement;
-    if (!document.fullscreenElement) {
-      element.requestFullscreen().catch((err) => {
-        console.error(`Error enabling full-screen mode: ${err.message}`);
-      });
-    }
-  };
-
-  const exitFullscreen = () => {
-    if (document.fullscreenElement) {
-      document.exitFullscreen().catch((err) => {
-        console.error(`Error exiting full-screen mode: ${err.message}`);
-      });
-    }
-  };
-
-  useEffect(() => {
-    const handleKeyDown = (event) => {
-      if (event.key === "Enter") {
-        toggleFullscreen();
-      } else if (event.key === "Escape") {
-        exitFullscreen();
-      }
-    };
-
-    window.addEventListener("keydown", handleKeyDown);
-    return () => {
-      window.removeEventListener("keydown", handleKeyDown);
-    };
-  }, []);
-
   return (
-    <div className="container">
-      <h1>Wanna work in DE, US or UK ?</h1>
-      <h1>TOEFL is the only chance</h1>
-      <div className="grid">
-        {squares.map(({ day, hasPassed, dateKey }, index) => (
-          <div
-            key={index}
-            className={`square ${hasPassed ? 'passed' : ''} ${notes[dateKey] ? 'with-note' : ''}`}
-            onClick={() => handleSquareClick(dateKey)}
-          >
-            {day}
-          </div>
-        ))}
-      </div>
-      <br />
-      <div className="zrsfsrefzse">
-        {daysRemaining} days remaining 
-      </div>
-      <br />
-      <div onClick={() => nav('/Dokument')} className="zrsfsrefzse">
-        Important Documents
+    <div className='Home'>
+      <div className="Home2">
+        <h1>Die Deutsch Traum</h1>
+        <div className="Timer">
+          {formatTime()}
+        </div>
+        {timeLeft.days === 0 && timeLeft.hours === 0 && timeLeft.minutes === 0 && timeLeft.seconds === 0 && (
+          alert('Time is up!') // You can replace this with any action (popup, sound, etc.)
+        )}
+        <br />
+        <span className='sojqefd'  onClick={()=>{nav('/Dokument')}} >
+          <em>
+            Wesentliches Dokument
+          </em>
+        </span>
       </div>
     </div>
   );
 };
-
 export default Home;
