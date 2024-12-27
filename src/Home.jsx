@@ -117,7 +117,7 @@ const Home = () => {
   return (
     <div className="container">
       <h1>Wanna work in DE, US or UK ?</h1>
-      <h1>TOEFL is the only chance</h1>
+      <h1>IELTS is the only chance</h1>
       <br />
       <div onClick={() => nav('/TimeManag')} className="zrsfsrefzse">
         Reading Track
