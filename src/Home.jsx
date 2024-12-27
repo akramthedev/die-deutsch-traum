@@ -117,18 +117,7 @@ const Home = () => {
   return (
     <div className="container">
       <h1>Wanna work in DE, US or UK ?</h1>
-      <h1>IELTS is the only chance</h1>
-      <br />
-      <div onClick={() => nav('/TimeManag')} className="zrsfsrefzse">
-        Reading Track
-      </div>
-          <br />
-
-      <div onClick={() => nav('/TimeManag2')} className="zrsfsrefzse">
-        Listening Track
-      </div>
-            <br />
-
+      <h1>TOEFL is the only chance</h1>
       <div className="grid">
         {squares.map(({ day, hasPassed, dateKey }, index) => (
           <div
@@ -142,7 +131,7 @@ const Home = () => {
       </div>
       <br />
       <div className="zrsfsrefzse">
-        {daysRemaining} days remaining until your target date!
+        {daysRemaining} days remaining 
       </div>
       <br />
       <div onClick={() => nav('/Dokument')} className="zrsfsrefzse">
