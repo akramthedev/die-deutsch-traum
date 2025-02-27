@@ -21,6 +21,13 @@ const Dokument = () => {
       <h1>Wesentliches Dokument</h1>
       <br /> 
       <a>
+        When you create a bewerbung dossier make sure to make as a photo fo cover a photo like a prisoner (get inspired of that photo of that girl )
+      </a>
+             <br /> 
+
+
+
+     <a>
         Numéro enregistrement Botschaft : 22663930 
       </a>
              <br /> 
