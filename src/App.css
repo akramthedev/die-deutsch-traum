@@ -246,11 +246,8 @@
   text-decoration: underline;
 }
 .Dokument{
-  height: 100vh;
+  height: auto;
   width: 100%;
   overflow: scroll !important;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+   
 }
