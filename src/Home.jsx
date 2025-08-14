@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import {useNavigate} from 'react-router-dom'
 const Home = () => {
-  const targetDate = new Date('2025-09-05T17:00:00');  
+  const targetDate = new Date('2025-10-01T00:00:00');  
   const nav = useNavigate();
   const calculateTimeLeft = () => {
     const now = new Date();
@@ -70,7 +70,7 @@ const Home = () => {
     <div className='Home'>
       <div className="Home2">
         <h1>
-          TLS Termin
+          Deutschland ruft
         </h1>
         <div className="Timer">
           {formatTime()}
@@ -89,4 +89,5 @@ const Home = () => {
   );
 };
 export default Home;
+
 
