@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import {useNavigate} from 'react-router-dom'
 const Home = () => {
-  const targetDate = new Date('2025-10-01T00:00:00');  
+  const targetDate = new Date('2026-01-15T00:00:00');  
   const nav = useNavigate();
   const calculateTimeLeft = () => {
     const now = new Date();
@@ -70,7 +70,7 @@ const Home = () => {
     <div className='Home'>
       <div className="Home2">
         <h1>
-          Deutschland ruft
+          telc B2 Prüfung 
         </h1>
         <div className="Timer">
           {formatTime()}
@@ -81,7 +81,13 @@ const Home = () => {
         <br />
         <span className='sojqefd'  onClick={()=>{nav('/Dokument')}} >
           <em>
-            Wesentliches Dokument
+            Andere Dokument
+          </em>
+        </span>
+        <br />
+        <span className='sojqefd'  onClick={()=>{nav('/Dokument-Telc')}} >
+          <em>
+            Telc Dokument
           </em>
         </span>
       </div>
@@ -89,5 +95,6 @@ const Home = () => {
   );
 };
 export default Home;
+
 
 
