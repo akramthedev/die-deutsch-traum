@@ -11,7 +11,7 @@ import LC from './LC.pdf'
 import DC from './DC.pdf'
 import BAC from './BAC.pdf'
 import Zer from './zertifikat.pdf'
- 
+import Insurance  from "./Mawistainsurance1year.pdf"
 
 import './App.css';
 
@@ -20,6 +20,13 @@ const Dokument = () => {
     <div className='Dokument'>
       <h1>Wesentliches Dokument</h1>
       <br /> 
+         <br />     <br /> 
+
+     <a href={Insurance} download="insurancemawista1year.pdf">
+        Private Versichierung Mawista
+      </a>
+    <br />     <br />     <br />     <br /> 
+     
       <a>
         When you create a bewerbung dossier make sure to make as a photo fo cover a photo like a prisoner (get inspired of that photo of that girl )
       </a>
@@ -193,3 +200,4 @@ TOEFL : 3905104251182978
 };
 
 export default Dokument;
+
