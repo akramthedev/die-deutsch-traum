@@ -11,7 +11,7 @@ import LC from './LC.pdf'
 import DC from './DC.pdf'
 import BAC from './BAC.pdf'
 import Zer from './zertifikat.pdf'
-import Insurance  from "./Mawistainsurance1year.pdf"
+import Insurance  from "./MAWISTA_ONE_YEAR.pdf"
 
 import './App.css';
 
@@ -200,4 +200,5 @@ TOEFL : 3905104251182978
 };
 
 export default Dokument;
+
 
