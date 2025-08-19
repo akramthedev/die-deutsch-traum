@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import {useNavigate} from 'react-router-dom'
 const Home = () => {
-  const targetDate = new Date('2026-10-01T00:00:00');  
+  const targetDate = new Date('2025-10-01T00:00:00');  
   const nav = useNavigate();
   const calculateTimeLeft = () => {
     const now = new Date();
@@ -95,6 +95,7 @@ const Home = () => {
   );
 };
 export default Home;
+
 
 
 
