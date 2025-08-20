@@ -12,6 +12,8 @@ import DC from './DC.pdf'
 import BAC from './BAC.pdf'
 import Zer from './zertifikat.pdf'
 import Insurance  from "./MAWISTA_ONE_YEAR.pdf"
+import Anmeldebestätigung from "./Anmeldebestätigung.pdf";
+
 
 import './App.css';
 
@@ -25,7 +27,17 @@ const Dokument = () => {
      <a href={Insurance} download="insurancemawista1year.pdf">
         Private Versichierung Mawista
       </a>
-    <br />     <br />     <br />     <br /> 
+    <br />  
+      
+      <a href={Anmeldebestätigung} download="Anmeldebestätigung.pdf">
+        Anmeldebestätigung Maria Spring
+      </a>
+    <br /> 
+      
+      <br />     <br />     <br /> 
+
+
+      
      
       <a>
         When you create a bewerbung dossier make sure to make as a photo fo cover a photo like a prisoner (get inspired of that photo of that girl )
@@ -200,5 +212,6 @@ TOEFL : 3905104251182978
 };
 
 export default Dokument;
+
 
 
