@@ -24,6 +24,16 @@ const Dokument = () => {
       <br /> 
          <br />     <br /> 
 
+        <span> Ahmed Chentouf Dredsen : 0762305392</span>
+
+        <br />   <br /> 
+
+       <span> Numero Viza BFAA : DEU/501600/20250728/000393513 SGR  </span>
+
+        <br />   <br /> 
+
+      
+
      <a href={Insurance} download="insurancemawista1year.pdf">
         Private Versichierung Mawista
       </a>
@@ -212,6 +222,7 @@ TOEFL : 3905104251182978
 };
 
 export default Dokument;
+
 
 
 
