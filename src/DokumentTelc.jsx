@@ -4,7 +4,23 @@ import './App.css';
 const Dokument = () => {
   return (
     <div className='Dokument'>
+
+
+
+  
+      <a href="https://web.telegram.org/a/#-1002126087316">
+        Telegram Chanel
+      </a>
+
+      <br />
+
+     
+
+
       
+
+      <hr/>
+      <br />
       <h1>Telc Dokument</h1>
       
       <a href="https://drive.google.com/drive/u/0/folders/11eCkDvhYyNr7aJSTcUljW2eeMWHz0ezh?fbclid=IwY2xjawG64OwBHRjCMumLmKZ1_-wdy-4z-hhuu0tPfqJqnY6nhuhNP7UWIggqoTGt934UzQ_aem_Af-J7unl6NqFXmFirFWbLL5hecqyVu0L1EDfgM2_Hg3cQbud8moFXu0JO4eZJJ6B_9D5e7e_OqG8jcv8kfktV391&sfnsn=wa">
