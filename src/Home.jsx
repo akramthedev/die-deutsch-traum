@@ -70,7 +70,7 @@ const Home = () => {
     <div className='Home'>
       <div className="Home2">
         <h1>
-          Deutschland ruft
+          Mein Ziel : Morgan Plus Four
         </h1>
         <div className="Timer">
           {formatTime()}
@@ -95,6 +95,7 @@ const Home = () => {
   );
 };
 export default Home;
+
 
 
 
