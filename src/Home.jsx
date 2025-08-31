@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import {useNavigate} from 'react-router-dom'
 const Home = () => {
-  const targetDate = new Date('2025-10-01T00:00:00');  
+  const targetDate = new Date('2025-12-30T00:00:00');  
   const nav = useNavigate();
   const calculateTimeLeft = () => {
     const now = new Date();
@@ -12,7 +12,7 @@ const Home = () => {
       return { days: 0, hours: 0, minutes: 0, seconds: 0 };
     }
 
-        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+    const days = Math.floor(difference / (1000 * 60 * 60 * 24));
     const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((difference % (1000 * 60)) / 1000);
@@ -70,7 +70,7 @@ const Home = () => {
     <div className='Home'>
       <div className="Home2">
         <h1>
-          Mein Ziel : Morgan Plus Four
+          telc B2
         </h1>
         <div className="Timer">
           {formatTime()}
@@ -90,11 +90,17 @@ const Home = () => {
             Telc Dokument
           </em>
         </span>
+<br />
+<br />
+         <span className='sojqefd'  onClick={()=>{nav('/Dokument-Telc')}} >
+          Morgan Plus Four is waiting for you 
+        </span>
       </div>
     </div>
   );
 };
 export default Home;
+
 
 
 
