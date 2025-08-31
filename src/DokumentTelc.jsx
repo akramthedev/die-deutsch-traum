@@ -9,8 +9,15 @@ const Dokument = () => {
 
   
       <a href="https://web.telegram.org/a/#-1002126087316">
-        Telegram Chanel
+        Telegram Chanel C1 
       </a>
+  <br />
+      
+      <a href="https://web.telegram.org/a/#-1001846916737">
+        Telegram Chanel B2
+      </a>
+
+      
 
       <br />
 
