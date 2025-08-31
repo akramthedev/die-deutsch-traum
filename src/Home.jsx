@@ -92,7 +92,7 @@ const Home = () => {
         </span>
 <br />
 <br />
-         <span className='sojqefd'  onClick={()=>{nav('/Dokument-Telc')}} >
+         <span className='sojqefd'   >
           Morgan Plus Four is waiting for you 
         </span>
       </div>
@@ -100,6 +100,7 @@ const Home = () => {
   );
 };
 export default Home;
+
 
 
 
