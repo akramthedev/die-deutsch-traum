@@ -70,7 +70,7 @@ const Home = () => {
     <div className='Home'>
       <div className="Home2">
         <h1>
-          telc B2
+          telc B2 den 30.12.2025
         </h1>
         <div className="Timer">
           {formatTime()}
@@ -113,6 +113,7 @@ const Home = () => {
   );
 };
 export default Home;
+
 
 
 
