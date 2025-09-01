@@ -79,6 +79,17 @@ const Home = () => {
           alert('Time is up!') 
         )}
         <br />
+
+        <a className='sojqefd' style="color : white !important;"  href="https://telc-b2.netlify.app" >
+          <em>
+            Telc Drive Essential
+          </em>
+        </span>
+
+        <br />
+
+
+        
         <span className='sojqefd'  onClick={()=>{nav('/Dokument')}} >
           <em>
             Andere Dokument
@@ -90,9 +101,10 @@ const Home = () => {
             Telc Dokument
           </em>
         </span>
-<br />
-<br />
-         <span className='sojqefd'   >
+
+        <br />
+      
+         <span style="color : white;"   >
           Morgan Plus Four is waiting for you 
         </span>
       </div>
@@ -100,6 +112,7 @@ const Home = () => {
   );
 };
 export default Home;
+
 
 
 
