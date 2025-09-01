@@ -80,12 +80,16 @@ const Home = () => {
         )}
         <br />
 
-        <a className='sojqefd' style="color : white !important;"  href="https://telc-b2.netlify.app" >
+     
+
+
+        <span className='sojqefd'  onClick={()=>{nav('/https://telc-b2.netlify.app')}} >
           <em>
-            Telc Drive Essential
+            TELC DRIVE B2 ESSENTIAL
           </em>
         </span>
 
+        
         <br />
 
 
@@ -102,16 +106,14 @@ const Home = () => {
           </em>
         </span>
 
-        <br />
-      
-         <span style="color : white;"   >
-          Morgan Plus Four is waiting for you 
-        </span>
+ 
+        
       </div>
     </div>
   );
 };
 export default Home;
+
 
 
 
