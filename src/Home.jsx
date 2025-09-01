@@ -85,7 +85,7 @@ const Home = () => {
 
         <span className='sojqefd'  onClick={()=>{nav('/https://telc-b2.netlify.app')}} >
           <em>
-            TELC DRIVE B2 ESSENTIAL
+            telc-b2.netlify.app
           </em>
         </span>
 
@@ -113,6 +113,7 @@ const Home = () => {
   );
 };
 export default Home;
+
 
 
 
