@@ -13,7 +13,7 @@ import BAC from './BAC.pdf'
 import Zer from './zertifikat.pdf'
 import Insurance  from "./MAWISTA_ONE_YEAR.pdf"
 import Anmeldebestätigung from "./Anmeldebestätigung.pdf";
-
+import CertificateOfEnrolment from "./certificateOfEnrolment.pdf"
 
 import './App.css';
 
@@ -31,6 +31,14 @@ const Dokument = () => {
        <span> Numero Viza BFAA : DEU/501600/20250728/000393513 SGR  </span>
 
         <br />   <br /> 
+
+
+
+
+      <a href={CertificateOfEnrolment} download="certificateOfEnrolment.pdf">
+        Certificate Of Enrolment
+      </a>
+    <br />  
 
       
 
@@ -222,6 +230,7 @@ TOEFL : 3905104251182978
 };
 
 export default Dokument;
+
 
 
 
