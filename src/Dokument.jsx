@@ -17,7 +17,7 @@ import CertificateOfEnrolment from "./certificateOfEnrolment.pdf"
 import MV from "./mawista_visum.pdf";
 import Blocking1 from "./Blocking Confirmation-CX-10722-BA-4092-AKRAM-EL BASRI.pdf"
 import Blocking2 from "./Blocking Confirmation statemant-CX-10722-BA-4092-AKRAM-EL BASRI.pdf"
-
+import IDoc from "./Important Links BTU Application Master & Bachelors.txt"
 
 import './App.css';
 
@@ -37,7 +37,11 @@ const Dokument = () => {
         <br />   <br /> 
 
 
-
+  <a href={IDoc} download="important-documents-BTU.pdf">
+        Very Important Documents Application to Master and Bachelors in Cottbus
+      </a>
+    <br />  
+      
 
             <a href={Blocking1} download="Blocking1.pdf">
         Blocking Confirmation 1 
@@ -253,6 +257,7 @@ TOEFL : 3905104251182978
 };
 
 export default Dokument;
+
 
 
 
