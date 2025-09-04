@@ -14,6 +14,8 @@ import Zer from './zertifikat.pdf'
 import Insurance  from "./MAWISTA_ONE_YEAR.pdf"
 import Anmeldebestätigung from "./Anmeldebestätigung.pdf";
 import CertificateOfEnrolment from "./certificateOfEnrolment.pdf"
+import MV from "./mawista_visum.pdf"
+
 
 import './App.css';
 
@@ -43,7 +45,13 @@ const Dokument = () => {
       
 
      <a href={Insurance} download="insurancemawista1year.pdf">
-        Private Versichierung Mawista
+        Private Versichierung Mawista 1 year
+      </a>
+    <br />  
+
+
+       <a href={MV} download="mawista-visum.pdf">
+        Private Versichierung Mawista Visum 1 month
       </a>
     <br />  
       
@@ -230,6 +238,7 @@ TOEFL : 3905104251182978
 };
 
 export default Dokument;
+
 
 
 
