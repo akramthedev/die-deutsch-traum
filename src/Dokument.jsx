@@ -14,7 +14,9 @@ import Zer from './zertifikat.pdf'
 import Insurance  from "./MAWISTA_ONE_YEAR.pdf"
 import Anmeldebestätigung from "./Anmeldebestätigung.pdf";
 import CertificateOfEnrolment from "./certificateOfEnrolment.pdf"
-import MV from "./mawista_visum.pdf"
+import MV from "./mawista_visum.pdf";
+import Blocking1 from "./Blocking Confirmation-CX-10722-BA-4092-AKRAM-EL BASRI.pdf"
+import Blocking2 from "./Blocking Confirmation statemant-CX-10722-BA-4092-AKRAM-EL BASRI.pdf"
 
 
 import './App.css';
@@ -36,6 +38,19 @@ const Dokument = () => {
 
 
 
+
+            <a href={Blocking1} download="Blocking1.pdf">
+        Blocking Confirmation 1 
+      </a>
+    <br />  
+
+
+            <a href={Blocking2} download="Blocking2.pdf">
+        Blocking Confirmation 2
+      </a>
+    <br />  
+
+      
 
       <a href={CertificateOfEnrolment} download="certificateOfEnrolment.pdf">
         Certificate Of Enrolment
@@ -238,6 +253,7 @@ TOEFL : 3905104251182978
 };
 
 export default Dokument;
+
 
 
 
