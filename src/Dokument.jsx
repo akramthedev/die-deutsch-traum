@@ -2,7 +2,7 @@ import React from 'react';
 import LettreRecommendation from './lettre-recommendation.pdf'
 import FicheLST from './FicheLST.pdf'
 import FicheDEUST from './FicheDEUST.pdf'
-
+import LocalisationOuail from "./LocalisationOuail.png"
 import LettreRecommendation2 from './RecoImane.pdf'
 import CV from './CV.pdf'
 import DN from './DN.pdf'
@@ -37,7 +37,13 @@ const Dokument = () => {
         <br />   <br /> 
 
 
-  <a href={IDoc} download="important-documents-BTU.pdf">
+  <a href={LocalisationOuail} download="LocalisationOuail.png">
+        Localisation Of Ouail the DZ mieter
+      </a>
+    <br />  
+
+
+        <a href={IDoc} download="important-documents-BTU.pdf">
         Very Important Documents Application to Master and Bachelors in Cottbus
       </a>
     <br />  
@@ -257,6 +263,7 @@ TOEFL : 3905104251182978
 };
 
 export default Dokument;
+
 
 
 
