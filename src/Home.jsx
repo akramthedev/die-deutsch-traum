@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import {useNavigate} from 'react-router-dom'
 const Home = () => {
-  const targetDate = new Date('2025-11-01T00:00:00');  
+  const targetDate = new Date('2026-09-30T00:00:00');  
   const nav = useNavigate();
   const calculateTimeLeft = () => {
     const now = new Date();
@@ -70,7 +70,7 @@ const Home = () => {
     <div className='Home'>
       <div className="Home2">
         <h1>
-          1 November 2025 : Cybersecurity Master Application
+          29 Oct - 1 Nov 2025 Cybersecurity Master
         </h1>
         <div className="Timer">
           {formatTime()}
@@ -83,29 +83,33 @@ const Home = () => {
      
 
 
-        <span className='sojqefd'  onClick={()=>{nav('/https://telc-b2.netlify.app')}} >
-          <em>
-            telc-b2.netlify.app
-          </em>
-        </span>
-
-        
-        <br />
+       
 
 
         
         <span className='sojqefd'  onClick={()=>{nav('/Dokument')}} >
           <em>
-            Andere Dokument
+            Importante Docs
           </em>
         </span>
         <br />
+        
         <span className='sojqefd'  onClick={()=>{nav('/Dokument-Telc')}} >
           <em>
-            Telc Dokument
+            Telc Docs
+          </em>
+        </span>
+         
+        <br />
+
+
+         <span className='sojqefd'  onClick={()=>{nav('/https://telc-b2.netlify.app')}} >
+          <em>
+            Site Telc Prep : telc-b2.netlify.app
           </em>
         </span>
 
+       
  
         
       </div>
@@ -113,6 +117,7 @@ const Home = () => {
   );
 };
 export default Home;
+
 
 
 
