@@ -27,6 +27,9 @@ const Dokument = () => {
       <h1>Wesentliches Dokument</h1>
       <br /> 
 
+        <span> ALL CRDS : 1966 NCHRETRAIT  </span>
+
+        
         <br />
 
       https://www.arbeitnow.com/
@@ -272,6 +275,7 @@ TOEFL : 3905104251182978
 };
 
 export default Dokument;
+
 
 
 
